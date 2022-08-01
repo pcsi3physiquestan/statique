@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>S’entrainer &#8212; Statique des fluides</title>
+    <title>Cas des fluides incompressibles &#8212; Statique des fluides</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_ex.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_incompressible.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Méthodes" href="statique_methode.html" />
-    <link rel="prev" title="Expression de la résultante des forces de pression" href="statique_resultante.html" />
+    <link rel="next" title="Cas des gaz parfait: Atmopshère isotherme" href="statique_gp.html" />
+    <link rel="prev" title="Equation fondamental de la statique des fluides" href="statique_equation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,16 +96,16 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="statique_contxt.html">
    Comprendre le contexte
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="statique_surface.html">
      Préambule: Surfaces orientées
@@ -119,8 +121,8 @@
      Equation fondamental de la statique des fluides
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="statique_incompressible.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Cas des fluides incompressibles
     </a>
    </li>
@@ -136,11 +138,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
    S’entrainer
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -203,11 +205,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/notebook/statique_ex.ipynb"><button type="button"
+            href="../_sources/notebook/statique_incompressible.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebook/statique_ex.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebook/statique_incompressible.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -232,7 +234,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_ex.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_incompressible.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -249,6 +251,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equation-barometrique">
+   Equation barométrique
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -257,16 +272,47 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="s-entrainer">
-<h1>S’entrainer<a class="headerlink" href="#s-entrainer" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>exercices-types (Méthodes)</p></li>
-<li><p>des activités (Activités) : pas d’activités</p></li>
-<li><p>des exercices d’application (Application)</p></li>
-<li><p>des exercices d’entrainement (Entrainement)</p></li>
-<li><p>des approfondissement (Aller plus loin) : pas pour ce chapitre</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="cas-des-fluides-incompressibles">
+<h1>Cas des fluides incompressibles<a class="headerlink" href="#cas-des-fluides-incompressibles" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Un fluide est _<em>incompressible</em> si sa masse volumique est la même quelques soient les conditions de pression.</p>
+</div>
+<div class="section" id="equation-barometrique">
+<h2>Equation barométrique<a class="headerlink" href="#equation-barometrique" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Il s’agit de profondeur soit la coordonnée verticale pour un axe pris vers le <strong>bas</strong>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Equation barométrique - Champ de pression pour un fluide incompressible</strong></p>
+<p>Dans un fluide incompressible de masse volumique <span class="math notranslate nohighlight">\(\rho_0\)</span> dans un champ de pesanteur d’intensité <span class="math notranslate nohighlight">\(g\)</span>, le champ de pression ne dépend que de la profondeur. La variation de pression <span class="math notranslate nohighlight">\(\Delta P = P(h_2) - P(h_1)\)</span> entre les <strong>profondeurs</strong> <span class="math notranslate nohighlight">\(h_2\)</span> et <span class="math notranslate nohighlight">\(h_1\)</span> s’écrit:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-111772ac-2993-4f66-a536-848f9f190447">
+<span class="eqno">(6)<a class="headerlink" href="#equation-111772ac-2993-4f66-a536-848f9f190447" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Delta P = P(h_2) - P(h_1) = \rho_0 g (h_2 - h_1)
+\end{equation}\]</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Démonstration</p>
+<blockquote>
+<div><p>On applique l’équation fondamental de la dynamique avec <span class="math notranslate nohighlight">\(\rho_0\)</span> uniforme (on oriente l’axe z vers le bas et les axes x et y sont horizontaux):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e50c913a-fe84-485c-b7c5-e91b2afd2f91">
+<span class="eqno">(7)<a class="headerlink" href="#equation-e50c913a-fe84-485c-b7c5-e91b2afd2f91" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\begin{cases}
+\frac{\partial P}{\partial x} &amp;= 0\\
+\frac{\partial P}{\partial y} &amp;= 0\\
+\frac{\partial P}{\partial z} &amp;= \rho_0 g\\
+\end{cases}
+\end{equation}\]</div>
+<p>Les deux premières équations permette de dire que le champ de pression ne dépend que de z. On peut donc réécrire P comme une fonction d’une seule variable <span class="math notranslate nohighlight">\(P(z)\)</span> et la dérivée partielle suivant z devient une dérivée droite. En intégrant entre <span class="math notranslate nohighlight">\(z = h_1\)</span> et <span class="math notranslate nohighlight">\(z = h_2\)</span>, il vient l’équation demandée (on rappelle que <span class="math notranslate nohighlight">\(\rho_0\)</span> est uniforme).</p>
+</div></blockquote>
+</div>
+<div class="topic">
+<p class="topic-title first">Interprétation</p>
+<p>On peut remarquer à nouveau que la variation de pression correspond à <span class="math notranslate nohighlight">\(\rho_0 g \Delta h\)</span>, soit le poids, par unité de surface de la colonne de fluide se situant au dessus sur une hauteur <span class="math notranslate nohighlight">\(\Delta h\)</span>.</p>
+<p>On remarquera aussi que le champ de pression ne varie pas à altitude constante <strong>quelque soit la forme du fluide.</strong>. Il suffit que les différentes parties du fluide communiquent.</p>
+</div>
 </div>
 </div>
 
@@ -295,17 +341,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="statique_resultante.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="statique_equation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Expression de la résultante des forces de pression</p>
+            <p class="prev-next-title">Equation fondamental de la statique des fluides</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="statique_methode.html" title="next page">
+    <a class='right-next' id="next-link" href="statique_gp.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Méthodes</p>
+        <p class="prev-next-title">Cas des gaz parfait: Atmopshère isotherme</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

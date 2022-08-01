@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Méthodes &#8212; Statique des fluides</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_methode.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercices d’application" href="statique_ex_app.html" />
+    <link rel="prev" title="S’entrainer" href="statique_ex.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Statique des fluides</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statique.html">
+   Statique des fluides
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_equation.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Méthodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/statique_methode.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/statique_methode.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_methode.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluides-incompressibles">
+   Fluides incompressibles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaz-parfait">
+   Gaz parfait
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theoreme-d-archimede">
+   Théorème d’Archimède
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-force-de-pression">
+   Calcul de force de pression
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="methodes">
+<h1>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fluides-incompressibles">
+<h2>Fluides incompressibles<a class="headerlink" href="#fluides-incompressibles" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Validité du modèle incompressible </p>
+<p>Dans le cas de l’eau, on peut donner le coefficient de compressibilité isotherme:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-369b8cb3-298e-46fd-bc5c-ccfea6ecd39e">
+<span class="eqno">(13)<a class="headerlink" href="#equation-369b8cb3-298e-46fd-bc5c-ccfea6ecd39e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\chi_{T} = \frac{1}{\rho}\left(\frac{\partial \rho}{\partial P}\right)_{T} = 5 \times 10^{-10} \rm{Pa^{-1}}
+\end{equation}\]</div>
+<p>où l’indice T signifie que la température est maintenue constante.</p>
+<ol class="simple">
+<li><p>Rappeler la valeur numérique de la masse volumique de l’eau</p></li>
+<li><p>Déduire du coefficient <span class="math notranslate nohighlight">\(\chi_T\)</span> une relation entre la variation <span class="math notranslate nohighlight">\(d\rho\)</span> et la variation <span class="math notranslate nohighlight">\(dP\)</span>.</p></li>
+<li><p>En déduire une estimation de la variation relative <span class="math notranslate nohighlight">\(\frac{\Delta \rho}{\rho_0}\)</span> pour une variation d’altitude <span class="math notranslate nohighlight">\(\Delta z\)</span> en considérant que le champ de pression suit le modèle d’un fluide incompressible.</p></li>
+<li><p>Estimer la variation d’altitude nécessaire pour observer une variation de 1% de la masse volumique. Commenter l’hyptohèse de fluide incompressible dans le cas de l’eau.</p></li>
+</ol>
+</div>
+<div class="topic">
+<p class="topic-title first">Correction</p>
+<p><em>Rappel : La masse volumique de l’eau (à connaître) est <span class="math notranslate nohighlight">\(\rho_0 = 10^3 \rm{kg.m^{_3}}\)</span>.</em></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{1}{\rho}\frac{\partial \rho}{\partial P} &amp;= \chi_T\\
+\frac{d\rho}{\rho} &amp;= \chi_T dP\\
+\rho &amp;= \rho_0 e^{\chi_T \Delta P}\\
+\rho &amp;= \rho_0 e^{\chi_T \rho_0 g \Delta z}\\
+\frac{\rho - \rho_0}{\rho_0} &amp;= e^{\chi_T \rho_0 g \Delta z} - 1\\
+\frac{\rho - \rho_0}{\rho_0} &amp;\approx \chi_T \rho_0 g \Delta z\\
+\Delta z &amp;\approx \frac{1}{\chi_T\rho_0 g} \frac{\Delta \rho}{\rho_0}\\
+\Delta z &amp; \approx 10^4 \rm{m}
+\end{align*}\]</div>
+<p>Dans ce calcul, on a remplacer la dérivée partielle par une dérivée droite en supposant que la température était uniforme, donc la masse volumique ne peut plus dépendre que de P. On linéarise ensuite l’exponentielle en considérant que son argument est faible (validé puisqu’on veut une variation de 1%</p>
+<p>La profondeur nécessaire est énorme et on peut donc largement faire l’hypothèse d’u fluide incompressible pour l’eau.</p>
+<p>On pourra retenir que les fluides incompressibles possèdent un coefficient de compressibilité isotherme très faible.</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Baromètre</p>
+<p>Le baromètre le plus courant est le baromètre de Torricelli. Il s’agit d’un tube en U fermé à une extrémité et l’autre extrémité est ouverte et à l’air libre. Du côté fermé, le mercure est surmonté par du vide en première approximation (P=0).</p>
+<ol class="simple">
+<li><p>Exprimer la différence de hauteur h entre les deux surfaces libres du mercure.</p></li>
+<li><p>On donne la masse volumique du mercure <span class="math notranslate nohighlight">\(\rho_{Hg} = 13,5 \times 10^3 \rm{kg.m^{-3}}\)</span>. Justifier l’utilisation du mercure plutôt que de l’eau pour faire un baromètre.</p></li>
+<li><p>Expliquer la définition de l’unité de pression mmHg (millimètre de mercure): <span class="math notranslate nohighlight">\(1\rm{mmHg}=133,3\rm{Pa}\)</span></p></li>
+</ol>
+</div>
+<div class="topic">
+<p class="topic-title first">Correction</p>
+<p>On retiendra de cet exercice l’utilisation du fait que la pression est la même en tout point isoaltitude.</p>
+<p><strong>Résolution</strong></p>
+<p>A la surface libre en contact avec l’atmosphère règne une pression <span class="math notranslate nohighlight">\(P_0 = 1 \rm{atm} \approx 10^5 \rm{Pa}\)</span>. De l’autre côté, on assimile la pression à une pression nulle <span class="math notranslate nohighlight">\(P= 0\)</span>. Le fluide étant au repos, on peut appliquer l’équation de la statique des fluides et puisqu’on fait l’hypothèse d’un fluide incompressible, on applique l’équation barométrique (on a orienté z vers le bas et pris la profondeur nulle à la hauteur de la surface de pression nulle):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;P(z=h) - P(z=0) = \rho g h\\
+&amp; \Longrightarrow h = \frac{P_0}{\rho g}\\
+&amp; \Longrightarrow h_{mercure} = 760 mm\\
+&amp; \Longrightarrow h_{mercure} = 10 m
+\end{align*}\]</div>
+<p>On observe que la taille du barométre sera beaucoup plus faible grâce sa plus forte masse volumique.</p>
+<p>On remarquera aussi que la différence de pression correspondant à une hauteur de mercure de 1mm est 133Pa, ce qui permet de définir l’unité de pression mmHg.</p>
+</div>
+</div>
+<div class="section" id="gaz-parfait">
+<h2>Gaz parfait<a class="headerlink" href="#gaz-parfait" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Ordres de grandeurs </p>
+<p>On considère une atmosphère isotherme d’un gaz parfait.</p>
+<ol class="simple">
+<li><p>Donner une expression d’une altitude caractéristique H qui gouverne l’échelle sur laquelle la pression varie notablement.</p></li>
+<li><p>Estimer H pour de l’air à la température <span class="math notranslate nohighlight">\(T = 273 \rm{K}\)</span>. Quelle hypothèse pourra être fait pour des gaz enfermée dans une enceinte de taille “normale”?</p></li>
+<li><p>Déterminer le champ de masse volumique. En déduire par intégration la masse totale de l’atmosphère (on supposera pour simplifier le calcul que la terre est plate !).</p></li>
+<li><p>On donne ci-dessous le profil de température et le profil de la masse d’atmosphère contenue sous l’altitude z. Commenter la validité du modèle isotherme.</p></li>
+</ol>
+<div class="figure align-center" id="fig-266">
+<img alt="../_images/thermo_statique_complement_fluide.jpg" src="../_images/thermo_statique_complement_fluide.jpg" />
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">Démonstration</p>
+<ul class="simple">
+<li><p><strong>Altitude caractéristique</strong><br />
+On observe que la pression décroit suivant une exponentielle décroissante. On va considérer que la pression a varier sur quelques H où H est la hauteur caractéristique associées à l’exponentielle, soit <span class="math notranslate nohighlight">\(H = \frac{RT}{Mg}\)</span>.</p></li>
+</ul>
+<p>On a <span class="math notranslate nohighlight">\(H \sim 7800 \rm{m}\)</span>. Pour des enceintes de tailles normales (au maximum quelques mètres), on peut considérer que que la <strong>pression au sein d’un gaz est uniforme</strong>.</p>
+<ul class="simple">
+<li><p><strong>Masse de l’atmosphère</strong><br />
+La relation des gaz parfaits donne une expression de la masse volumique. On intégrera entre 0 et l’infini pour obtenir une estimation de la masse de l’atmosphère.</p></li>
+<li><p><strong>Pertinence de la modélisation</strong><br />
+On observe que le profil de mass volumique semble être cohérent mais les valeurs numériques ne le sont pas.</p></li>
+</ul>
+<p>Quant au profil de température, le caractère constant est largement criticable. On utilise souvent un profil de température linéaire.</p>
+</div>
+</div>
+<div class="section" id="theoreme-d-archimede">
+<h2>Théorème d’Archimède<a class="headerlink" href="#theoreme-d-archimede" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Iceberg</p>
+<p>On veut calculer le volume émergé de l’iceberg qu’on suppose de masse m répartie uniformément et de volume V. On suppose de plus que l’air et l’eau sont pour les dimensions considérées des fluides homogènes.</p>
+<p>On donne: <span class="math notranslate nohighlight">\(\rho_{glace} = 0,9 \rho_{eau}\)</span> et <span class="math notranslate nohighlight">\(\rho_{air} \ll \rho_{glace}\)</span>.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Démonstration</p>
+<p>Notons <span class="math notranslate nohighlight">\(V_i\)</span> le volume immergé dans l’eau et <span class="math notranslate nohighlight">\(V_e\)</span> le voume émergé (donc immergé dans l’air). Les forces qui s’appliquent sur l’iceberg sont (on a pris un axe Oz vertical vers le haut):</p>
+<ul class="simple">
+<li><p>son poids: <span class="math notranslate nohighlight">\(\overrightarrow{P} = - \rho_{glace} (V_i + V_e) g \overrightarrow{e_z}\)</span></p></li>
+<li><p>la poussée d’Archimède associée à l’eau: <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_{A,eau}} = \rho_{eau} V_i g \overrightarrow{e_z}\)</span></p></li>
+<li><p>la poussée d’Archimède associée à l’air: <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_{A,air}} = \rho_{air} V_e g \overrightarrow{e_z}\)</span></p></li>
+</ul>
+<p>Le bilan statique s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{P} + \overrightarrow{\Pi_{A,eau}} + \overrightarrow{\Pi_{A,air}} = \overrightarrow{0}\)</span> soit:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; (\rho_{eau} V_i +\rho_{air}V_e - \rho_{glace} (V_i + V_e))g = 0\\
+&amp; \Longrightarrow\frac{V_i}{V_e} = \frac{\rho_{glace} - \rho_{air}}{\rho_{eau} - \rho_{glace}} \approx 9
+\end{align*}\]</div>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Ballon ascensionnel </p>
+<p>On s’intéresse à un ballon de volume V constant gonflé avec un gaz plus léger que l’air atmosphérique. Dans ce modèle, nous supposerons que le volume V est suffisamment petit pour qu’on puisse considérer que la masse volumique de l’air qui entoure le ballon est constante. On la note: <span class="math notranslate nohighlight">\(\rho_{air}\)</span> On note m la masse totale du ballon et (<span class="math notranslate nohighlight">\(\rho\)</span> sa masse volumique moyenne, c’est-à-dire que  <span class="math notranslate nohighlight">\(\rho = \frac{m}{V}\)</span>, il faut compter dans m la masse du gaz ET de l’enceinte).</p>
+<ol class="simple">
+<li><p>Etablir l’équation différentielle du mouvement du ballon en supposant le théorème d’Archimède applicable.</p></li>
+<li><p>On suppose qu’à une altitude <span class="math notranslate nohighlight">\(z_0\)</span>, le ballon est à l’équilibre. Faut-il augmenter ou diminuer la masse volumique du ballon pour monter? Justifier qu’on chauffe alors le gaz à l’intérieur pour s’élever.</p></li>
+<li><p>Pour descendre, on ouvre en général une soupape qui libère du gaz. Justifier la manoeuvre.</p></li>
+</ol>
+</div>
+<div class="topic">
+<p class="topic-title first">Réponses</p>
+<ol class="simple">
+<li><p>On est dans le cas où l’on assimile le champ de l’air à celui qu’il aurait au repos ce qui permet d’appliquer le théorème d’Archimède.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-d7179dfe-e31d-44ed-a1ea-6840b70277be">
+<span class="eqno">(14)<a class="headerlink" href="#equation-d7179dfe-e31d-44ed-a1ea-6840b70277be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+m \ddot z = \left(\rho_{air} - \rho\right) g V
+\end{equation}\]</div>
+<ol class="simple">
+<li><p>Il faut évidemment diminuer la masse volumique du ballon pour qu’il monte. En considérant le volume du ballon comme fixe (le ballon est tendu) et sa pression comme fixe (elle es imposée par la pression extérieure, la loi des gaz parfait montre qu’une diminution de la masse est associée à une augmentation de température.</p></li>
+<li><p>Cette fois-ci, la diminution de matière entraîne une diminution du volume (T et P constants) donc une augmentation de la masse volumique (à cause de la masse de la nacelle), ce qui permet de faire redescendre le ballon.
+\end{meth}</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="calcul-de-force-de-pression">
+<h2>Calcul de force de pression<a class="headerlink" href="#calcul-de-force-de-pression" title="Permalink to this headline">¶</a></h2>
+<div class="attention admonition">
+<p class="admonition-title">Barrage</p>
+<p>On considère un barrage assimilable à un demi-cylindre de hauteur H et de rayon R. L’eau est retenue à “l’intérieur” du demi-cylindre. Calculer la résultante des forces de pression exercée sur le barrage. On prendra l’origine des <strong>profondeur</strong> z à la surface de l’eau où l’atmosphère supérieur y impose une pression <span class="math notranslate nohighlight">\(P_0\)</span>. Faire l’application numérique pour un barrage de 10m de haut de rayon 30m.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Démonstration</p>
+<ul class="simple">
+<li><p><strong>Choix du système de coordonnées</strong></p></li>
+</ul>
+<p>La surface de contact étant un cylindre, on va utiliser un système de coordonnées cylindriques d’axe Oz l’axe du cylindre.</p>
+<ul class="simple">
+<li><p><strong>Détermination du champ de pression</strong></p></li>
+</ul>
+<p>On utilise l’équation barométrique. <span class="math notranslate nohighlight">\(P(z) - P(z=0) = P(z) - P_0 = \rho g z\)</span> d’où <span class="math notranslate nohighlight">\(P(z) = P_0 + \rho g z\)</span></p>
+<ul class="simple">
+<li><p><strong>Vecteur surface.</strong></p></li>
+</ul>
+<p>Sur un petit élément de surface du barrage, les coordonnées qui varient sont l’angle <span class="math notranslate nohighlight">\(\theta\)</span> (dont le déplacement élémentaire correspondant est <span class="math notranslate nohighlight">\(R d\theta\)</span>) et la hauteur z (dont le déplacement élémentaire correspondant est <span class="math notranslate nohighlight">\(dz\)</span>).</p>
+<p>La surface vaut donc <span class="math notranslate nohighlight">\(dS = R dz d\theta\)</span>.</p>
+<p>Le vecteur normale est <span class="math notranslate nohighlight">\(\overrightarrow{e_r}\)</span>. On l’oriente positivement <span class="math notranslate nohighlight">\(\overrightarrow{dS} = R dz d\theta \overrightarrow{e_r}\)</span> de sorte que la force de pression élémentaire est: <span class="math notranslate nohighlight">\(\overrightarrow{dF} = P R dz d\theta \overrightarrow{e_r}\)</span>.</p>
+<ul class="simple">
+<li><p><strong>Expression de l’intégrale</strong></p></li>
+</ul>
+<p>L’intégrale s’écrit donc:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{F} = \iint_{M\in surface} P R dz d\theta \overrightarrow{e_r}\\
+\overrightarrow{F} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} P R dz d\theta \overrightarrow{e_r}\\
+\overrightarrow{F} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} P R \left(\cos \theta \overrightarrow{e_x} + \sin \theta \overrightarrow{e_y}\right) dz d\theta
+\end{align*}\]</div>
+<p>On observe que les variables d’intégration sont z et <span class="math notranslate nohighlight">\(\theta\)</span>. On définit les bornes en fonction de la forme du barrage. Il est important de remarquer que le choix du paramétrage influe sur les bornes (ici l’origine des angles <span class="math notranslate nohighlight">\(\theta\)</span> qui correspond à l’axe Ox est pris sur un des bords du demi-cercle.</p>
+<p>On remarque que le vecteur <span class="math notranslate nohighlight">\(\overrightarrow{e_r}\)</span> va varier durant l’intégration (il dépend de <span class="math notranslate nohighlight">\(\theta\)</span>), on l’a donc projeté sur une base cartésienne.</p>
+<ul class="simple">
+<li><p><strong>Calcul de l’intégrale</strong></p></li>
+</ul>
+<p>Avant de se lancer dans le calcul, on va utiliser les symétries. Ici la surface de contact est symétrique par rapport à au plan xOy de sorte qu’on attend que la composante suivant <span class="math notranslate nohighlight">\(\overrightarrow{e_x}\)</span> sera nulle (on pourra s’en convaincre en la calculant). On va donc projeter la résultante suivant <span class="math notranslate nohighlight">\(\overrightarrow{e_y}\)</span> et ne calculer que cette composante.</p>
+<p>L’intégrale est à variable séparable, c’est-à-dire que la fonction peut être écrite comme un produit de deux fonctions d’une variable z et <span class="math notranslate nohighlight">\(\theta\)</span> de sorte que l’intégrale double se réécrit comme le produit de deux intégrales simples:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\overrightarrow{F} \cdot \overrightarrow{e_y} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} \left(P_0 + \rho g z\right) R \sin \theta  dz d\theta \\
+\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(\int_{z=0}^{z=H} \left(P_0 + \rho g z\right) dz\right) \left(\int_{\theta = 0}^{\theta = \pi} \sin \theta d\theta\right) \\
+\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(P_0 H + \frac{\rho g H^2}{2}\right) \left(2\right) \\
+\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(2 P_0 H + \rho g H^2\right)
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="statique_ex.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">S’entrainer</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="statique_ex_app.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercices d’application</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

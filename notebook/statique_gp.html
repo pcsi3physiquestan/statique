@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comprendre le contexte &#8212; Statique des fluides</title>
+    <title>Cas des gaz parfait: Atmopshère isotherme &#8212; Statique des fluides</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_contxt.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_gp.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Préambule: Surfaces orientées" href="statique_surface.html" />
-    <link rel="prev" title="Statique des fluides" href="../statique.html" />
+    <link rel="next" title="Expression de la résultante des forces de pression" href="statique_resultante.html" />
+    <link rel="prev" title="Cas des fluides incompressibles" href="statique_incompressible.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,7 +97,7 @@
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="statique_contxt.html">
    Comprendre le contexte
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -103,7 +105,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="statique_surface.html">
      Préambule: Surfaces orientées
@@ -124,8 +126,8 @@
      Cas des fluides incompressibles
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="statique_gp.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Cas des gaz parfait: Atmopshère isotherme
     </a>
    </li>
@@ -203,11 +205,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/notebook/statique_contxt.ipynb"><button type="button"
+            href="../_sources/notebook/statique_gp.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebook/statique_contxt.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebook/statique_gp.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -232,7 +234,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_contxt.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_gp.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -249,6 +251,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#champ-de-pression-pour-un-atmosphere-isotherme-d-un-gaz-parfait">
+   Champ de pression pour un atmosphère isotherme d’un gaz parfait.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facteur-de-boltzmann">
+   Facteur de Boltzmann
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -257,9 +277,80 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="comprendre-le-contexte">
-<h1>Comprendre le contexte<a class="headerlink" href="#comprendre-le-contexte" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="cas-des-gaz-parfait-atmopshere-isotherme">
+<h1>Cas des gaz parfait: Atmopshère isotherme<a class="headerlink" href="#cas-des-gaz-parfait-atmopshere-isotherme" title="Permalink to this headline">¶</a></h1>
+<p><em>On va maintenant supposer que le fluide est un gaz parfait. On va donc pouvoir utiliser l’équation d’état des gaz parfaits pour relier la masse volumique et la pression. Le problème est qu’on fait apparaître la température qui peut aussi varier dans l’espace. On va donc devoir faire une hypothèse sur la température. Dans le cadre du cours, on suppose pour faire simple que l’atmosphère est isotherme, c’est-à-dire que la température est uniforme. On reviendra sur cette hypothèse par la suite.</em></p>
+<div class="section" id="champ-de-pression-pour-un-atmosphere-isotherme-d-un-gaz-parfait">
+<h2>Champ de pression pour un atmosphère isotherme d’un gaz parfait.<a class="headerlink" href="#champ-de-pression-pour-un-atmosphere-isotherme-d-un-gaz-parfait" title="Permalink to this headline">¶</a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em>Rappel :Equation d’état d’un gaz parfait.</em>
+On rappelle que l’équation d’état d’un gaz parfait s’écrit:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+PV &amp;= nRT\\
+P \frac{m}{\rho} &amp;= nRT\\
+\frac{P}{\rho} &amp;= \frac{n}{m}RT\\
+\frac{P}{\rho} &amp;= \frac{RT}{M}
+\end{align*}\]</div>
+<p>avec M la masse molaire du gaz parfait et R la constante des gaz parfaits.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Champ de pression pour un gaz parfait sous l’hypothèse isotherme.</strong></p>
+<p>Une atmosphère de gaz parfait à température uniforme dans un champ de pesanteur uniforme possède pour champ de pression P(z) (où z est l’<strong>altitude</strong>):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+P(z) &amp;= P(z=0) \exp(-\frac{Mgz}{RT})\\
+ &amp;= P(z=0) \exp(-\frac{M_P gz}{k_B T})
+\end{align*}\]</div>
+<p>où <span class="math notranslate nohighlight">\(M_P\)</span> est la masse d’une particule du gaz, M sa masse molaire, <span class="math notranslate nohighlight">\(R = 8.314 \rm{J.K^{-1}.mol^{-1}}\)</span> la constante des gaz parfaits et <span class="math notranslate nohighlight">\(k_B = 1.38 \times 10^{-23} \rm{J.K^{-1}}\)</span>. On remarquera que <span class="math notranslate nohighlight">\(R = N_A k_B\)</span>.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Démonstration</p>
+<blockquote>
+<div><p>On prend un axe Oz vertical vers le haut et deux axe Ox et Oy horizontaux. A nouveau, la projection de l’équation fondamentale sur x et y montre que le champ de pression ne dépend ni de x, ni de y. On écrira donc bien <span class="math notranslate nohighlight">\(P(z)\)</span> et on remplace la dérivée partielle par rapport à z par une dérivée droite.</p>
+<p>L’équation d’état établie précédemment permet de réécrire l’équation fondamentale de la statique des fluides et de la résoudre:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{dP}{dz} + \frac{PM}{RT}g &amp;= 0\\
+P(z) &amp;= A e^{-\frac{Mgz}{RT}}\\
+P(z) &amp;= P(z=0) e^{-\frac{Mgz}{RT}}\\
+P(z) &amp;= P(z=0) e^{-\frac{M_P gz}{\frac{R}{N_A}T}}\\
+P(z) &amp;= P(z=0) e^{-\frac{M_P gz}{k_B T}}
+\end{align*}\]</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="facteur-de-boltzmann">
+<h2>Facteur de Boltzmann<a class="headerlink" href="#facteur-de-boltzmann" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Profil de concentration</p>
+<p>En utilisant les différentes relations établies précédemment, on observe que le nombre de particule par unité de volume située à une altitude z est:  <span class="math notranslate nohighlight">\(n(z) = n_0 \exp(-\frac{M_p gz}{k_B T})\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(n(z)\)</span> représente donc la statistiques des particules en fonction de l’altitude mais on peut aussi le comprendre comme <strong>la statistique  des particules en fonction de leur énergie potentielle (ici de pesanteur).</strong></p>
+<p><strong>Analyse de la statistique des particules</strong><br />
+On observe que le nombre de particules décroit avec l’énergie potentielle: les hautes énergies (ici hautes altitudes) sont moins peuplées que les basses altitudes.</p>
+<p>L’argument de l’exponentielle fait apparaître un rapport entre deux termes énergétiques. C’est la compétition entre ces deux termes qui va permettre de déterminer si le niveau d’énergie sera densément peuplé ou non:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M_p gz\)</span> représente l’énergie potentielle d’une particule à l’altitude z. Plus ce terme est grand, plus le terme exponentielle est faible et plus le nombre de particule qui auront cette énergie sera faible. On retrouve le principe que les systèmes mécaniques tendent à se stabiliser au minimum d’énergie potentielle.</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_B T\)</span> représente l’agitation thermique (on verra que l’énergie d’agitation thermique est proportionnelle à <span class="math notranslate nohighlight">\(k_B T\)</span>). Plus ce terme est grand, plus le terme exponentielle est grand et plus le nombre de particule qui auront une énergie donnée sera grand. On peut ainsi peupler les état d’énergie plus important (ici les hautes altitudes). L’agitation thermique tend à homogénéiser le système, ici à atteindre toutes les énergies - les altitudes.</p></li>
+</ul>
+<p>Suivant la température, les particules vont occuper une gamme d’énergie plus ou moins grande. Pour un état d’énergie <span class="math notranslate nohighlight">\(E_p\)</span>, si <span class="math notranslate nohighlight">\(k_B T \gg E_p\)</span>, l’état énergétique sera densément peuplé et si <span class="math notranslate nohighlight">\(k_B T \ll E_p\)</span> l’état énergétique sera faiblement peuplé.</p>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Interprétation</p>
+<p>Comme on l’a dit précédemment, cette loi statistique montre que, comme le prévoit la mécanique classique, les états de plus faibles énergies sont les plus peuplées (cf. les études des systèmes conservatifs) mais que l’agitation thermique permet statistiquement d’atteindre des états d’énergie plus haut. De nombreux phénomènes peuvent s’expliquer au moyen de la statistique de Boltzmann, notamment en chimie où les systèmes sont en général en équilibre avec un thermostat (ex: la loi d’Arhénius).</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Généralisation (Admise): Facteur de Boltzmann</strong></p>
+<p>D’une manière plus générale, si un système de <span class="math notranslate nohighlight">\(n_0\)</span> particules par unité de volume est <strong>en équilibre à une température T</strong>, le nombre de particule par unité de volume <span class="math notranslate nohighlight">\(n(E_p)\)</span> ayant l’énergie potentielle <span class="math notranslate nohighlight">\(E_p\)</span> est:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-41196d8e-6cd0-4442-9fef-0c5ac47b7771">
+<span class="eqno">(8)<a class="headerlink" href="#equation-41196d8e-6cd0-4442-9fef-0c5ac47b7771" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+n(E_p) = A \exp(-\frac{E_p}{k_B T})
+\end{equation}\]</div>
+<p>Le terme exponentielle porte le nom de <strong>facteur de Boltzmann</strong>. La constante A est une constante de normalisation telle que la somme du nombre de particules dans chaque état donne <span class="math notranslate nohighlight">\(n_0\)</span>.</p>
+</div>
 </div>
 </div>
 
@@ -288,17 +379,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../statique.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="statique_incompressible.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Statique des fluides</p>
+            <p class="prev-next-title">Cas des fluides incompressibles</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="statique_surface.html" title="next page">
+    <a class='right-next' id="next-link" href="statique_resultante.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Préambule: Surfaces orientées</p>
+        <p class="prev-next-title">Expression de la résultante des forces de pression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

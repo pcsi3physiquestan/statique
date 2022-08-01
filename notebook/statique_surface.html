@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>S’entrainer &#8212; Statique des fluides</title>
+    <title>Préambule: Surfaces orientées &#8212; Statique des fluides</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_ex.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_surface.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Méthodes" href="statique_methode.html" />
-    <link rel="prev" title="Expression de la résultante des forces de pression" href="statique_resultante.html" />
+    <link rel="next" title="Forces de pression et pression" href="statique_pression.html" />
+    <link rel="prev" title="Comprendre le contexte" href="statique_contxt.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,18 +96,18 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="statique_contxt.html">
    Comprendre le contexte
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="statique_surface.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Préambule: Surfaces orientées
     </a>
    </li>
@@ -136,11 +138,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
    S’entrainer
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -203,11 +205,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/notebook/statique_ex.ipynb"><button type="button"
+            href="../_sources/notebook/statique_surface.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebook/statique_ex.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebook/statique_surface.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -232,7 +234,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_ex.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_surface.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -249,6 +251,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vecteur-surface">
+   Vecteur surface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vecteur-surface-orientation">
+   Vecteur surface: Orientation
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -257,16 +277,49 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="s-entrainer">
-<h1>S’entrainer<a class="headerlink" href="#s-entrainer" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>exercices-types (Méthodes)</p></li>
-<li><p>des activités (Activités) : pas d’activités</p></li>
-<li><p>des exercices d’application (Application)</p></li>
-<li><p>des exercices d’entrainement (Entrainement)</p></li>
-<li><p>des approfondissement (Aller plus loin) : pas pour ce chapitre</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="preambule-surfaces-orientees">
+<h1>Préambule: Surfaces orientées<a class="headerlink" href="#preambule-surfaces-orientees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vecteur-surface">
+<h2>Vecteur surface<a class="headerlink" href="#vecteur-surface" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Le <span class="math notranslate nohighlight">\(^2\)</span> signifie qu’il s’agit d’un produit de deux infinitésimaux. S’il permet de comprendre qu’il faut intégrer deux fois, il pourra être omis.</p>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Vecteur surface</p>
+<p>Si l’on considère une surface d’extension finie, on peut la découper en une multitude de surface infinitésimale <span class="math notranslate nohighlight">\(\overrightarrow{d^2S}\)</span>. Le vecteur surface <span class="math notranslate nohighlight">\(\overrightarrow{S}\)</span> est alors la somme des vecteurs surfaces infinitésimaux:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5db227e5-3d55-4a88-99fa-86b8b8a70acb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-5db227e5-3d55-4a88-99fa-86b8b8a70acb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\overrightarrow{S} = \iint_{M \in S} \overrightarrow{d^2S}
+\end{equation}\]</div>
+<p>Comme dit précédemment, il s’agit d’une intégrale double sur une surface. Nous verrons plus tard comment la calculer.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Vecteur surface élémentaire</strong></p>
+<p>Soit une surface infinitésimale de surface <span class="math notranslate nohighlight">\(d^2S\)</span>, on peut orienté la surface, c’està-dire choisir un sens dans lequel la traversée de la surface est positif. On définit alors le vecteur surface <span class="math notranslate nohighlight">\(\overrightarrow{d^2S}\)</span> comme le vecteur de norme <span class="math notranslate nohighlight">\(d^2S\)</span> orienté perpencidulairement à la surface et dirigé dans le sens d’orientation choisi de la surface.</p>
+<div class="figure align-center" id="fig-263">
+<img alt="../_images/mathematiques_surface_contour.jpg" src="../_images/mathematiques_surface_contour.jpg" />
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">Exemple : Expression d’un vecteur surface.</p>
+<p>Dans le cadre du programme, l’expression d’un vecteur surface élémentaire s’établira toujours simplement si l’on choisit correctement le système de coordonnées.</p>
+<p>Par exemple, si l’on considère un plan et une petite portion infinitésimale <span class="math notranslate nohighlight">\(d^2s\)</span> du plan, on va choisir de paramétrer ce plan avec un système de coordonnées cartésiennes (en choisissant par exemple l’axe Oz perpendiculaire au plan). Un élément de surface infinitésimal est alors un carré dont les côté sont les variations infinitésimales de x et y soit dx et dy. La surface vaut alors <span class="math notranslate nohighlight">\(d^2S = dx dy\)</span>.</p>
+<p>De la même manière, l’orientation du vecteur s’établira, dans le cadre du programme, suivant un seul vecteur de la base. Ici, il le vecteur normal au plan est le vecteur <span class="math notranslate nohighlight">\(\pm \overrightarrow{e_z}\)</span>. Nous reviendrons plus tard sur les convention d’orientation des surfaces. Ici, on peut choisir arbitrairement l’orientation. On écrira par exemple le vecteur surface <span class="math notranslate nohighlight">\(\overrightarrow{d^2S} = dx dy \overrightarrow{e_z}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="vecteur-surface-orientation">
+<h2>Vecteur surface: Orientation<a class="headerlink" href="#vecteur-surface-orientation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Surface fermée et non fermée.</strong></p>
+<p>Une surface fermée est une surface qui divise l’espace en deux parties et où il est impossible de passer d’une partie à l’autre sans traverser la surface. On définit alors un intérieur et un extérieur.</p>
+</div>
+<p><strong>Convention d’orientation pour les surfaces fermées.</strong><br />
+Pour une surface fermée, on oriente par convention le vecteur surface vers l’extérieur.</p>
+<p><strong>Convention d’orientation d’une surface non fermée.</strong><br />
+Pour une surface non fermée, l’orientation de la surface est arbitraire sauf si l’on oriente le contour sur lequel s’appuie la surface. Ce cas ne sera traité qu’en fin d’année. Pour l’instant , on choisira arbitrairement (c’est-à-dire intelligement) l’orientation de la surface.</p>
 </div>
 </div>
 
@@ -295,17 +348,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="statique_resultante.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="statique_contxt.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Expression de la résultante des forces de pression</p>
+            <p class="prev-next-title">Comprendre le contexte</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="statique_methode.html" title="next page">
+    <a class='right-next' id="next-link" href="statique_pression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Méthodes</p>
+        <p class="prev-next-title">Forces de pression et pression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
