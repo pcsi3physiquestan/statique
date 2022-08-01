@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercices d’application &#8212; Statique des fluides</title>
+    <title>S’entrainer &#8212; Statique des fluides</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,12 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/stat_ex_app.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_ex.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Travaux dirigés" href="stat_td.html" />
-    <link rel="prev" title="S’entrainer" href="statique_ex.html" />
+    <link rel="next" title="Exercices d’application" href="stat_ex_app.html" />
+    <link rel="prev" title="Expression de la résultante des forces de pression" href="stat_resultante.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,7 +137,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="statique_ex.html">
+  <a class="current reference internal" href="#">
    S’entrainer
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -147,9 +145,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_ex_app.html">
      Exercices d’application
     </a>
    </li>
@@ -200,11 +198,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/notebook/stat_ex_app.ipynb"><button type="button"
+            href="../_sources/notebook/statique_ex.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebook/stat_ex_app.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebook/statique_ex.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -229,7 +227,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/stat_ex_app.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_ex.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -246,29 +244,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#verrin-hydraulique">
-   Verrin hydraulique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#atmophere-non-isotherme">
-   Atmophère non isotherme
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glacon">
-   Glaçon
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -277,32 +252,16 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercices-d-application">
-<h1>Exercices d’application<a class="headerlink" href="#exercices-d-application" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="verrin-hydraulique">
-<h2>Verrin hydraulique<a class="headerlink" href="#verrin-hydraulique" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>On considère un verrin constitué d’un réservoir de section <span class="math notranslate nohighlight">\(S_1\)</span> relié par le fond à un second réservoir de section <span class="math notranslate nohighlight">\(S_2 &lt; S_1\)</span>. Deux plateaux de masses négligeables et de sections <span class="math notranslate nohighlight">\(S_1\)</span> et <span class="math notranslate nohighlight">\(S_2\)</span> ferment le réservoir de chaque côté et il est rempli d’eau.</p>
-<ol class="simple">
-<li><p>Au dessus de chaque plateau on trouve la même atmosphère. Quelle est la différence de hauteur entre les deux plateaux à l’équilibre?</p></li>
-<li><p>Les plateaux sont à l’équilibre et on pose sur le plateau <span class="math notranslate nohighlight">\(S_1\)</span> une masse M. Quelle force F faut-il appliquer sur le plateau <span class="math notranslate nohighlight">\(S_2\)</span> pour maintenir l’ensemble à l’équilibre. Commenter.</p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="atmophere-non-isotherme">
-<h2>Atmophère non isotherme<a class="headerlink" href="#atmophere-non-isotherme" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>On assimile l’atmosphère à un gaz parfait et on suppose que le profil de température est <span class="math notranslate nohighlight">\(T(z) = T_0 (1 - \alpha z)\)</span> avec z l’altitude (<span class="math notranslate nohighlight">\(z=0\)</span> au sol). Déterminer le champ de pression en supposant l’atmosphère au repos et le champ de pesanteur uniforme.</p>
-</div>
-</div>
-<div class="section" id="glacon">
-<h2>Glaçon<a class="headerlink" href="#glacon" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>Un glaçon flotte dans un verre d’eau. De quelle hauteur l’eau a monté quand le glaçon a complètement fondu.</p>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="s-entrainer">
+<h1>S’entrainer<a class="headerlink" href="#s-entrainer" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>exercices-types (Méthodes)</p></li>
+<li><p>des activités (Activités) : pas d’activités</p></li>
+<li><p>des exercices d’application (Application)</p></li>
+<li><p>des exercices d’entrainement (Entrainement)</p></li>
+<li><p>des approfondissement (Aller plus loin) : pas pour ce chapitre</p></li>
+</ul>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -331,17 +290,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="statique_ex.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stat_resultante.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">S’entrainer</p>
+            <p class="prev-next-title">Expression de la résultante des forces de pression</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="stat_td.html" title="next page">
+    <a class='right-next' id="next-link" href="stat_ex_app.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Travaux dirigés</p>
+        <p class="prev-next-title">Exercices d’application</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

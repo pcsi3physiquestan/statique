@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Equation fondamental de la statique des fluides &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/equation_stat.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +58,10 @@
     <link rel="next" title="Cas des fluides incompressibles" href="incompressible.html" />
     <link rel="prev" title="Forces de pression et pression" href="pression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,13 +79,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,45 +96,69 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="surface.html">
-   Préambule: Surfaces orientées
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pression.html">
-   Forces de pression et pression
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
   </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Equation fondamental de la statique des fluides
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="incompressible.html">
-   Cas des fluides incompressibles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_gp.html">
-   Cas des gaz parfait: Atmopshère isotherme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_resultante.html">
-   Expression de la résultante des forces de pression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_ex_app.html">
-   Exercices d’application
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_td.html">
-   Travaux dirigés
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -221,16 +249,11 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#particule-de-fluide">
    Particule de fluide
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bilan-des-forces">
-   Bilan des forces
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -254,129 +277,117 @@
         
               <div>
                 
-  <div class="section" id="equation-fondamental-de-la-statique-des-fluides">
+  <div class="tex2jax_ignore mathjax_ignore section" id="equation-fondamental-de-la-statique-des-fluides">
 <h1>Equation fondamental de la statique des fluides<a class="headerlink" href="#equation-fondamental-de-la-statique-des-fluides" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="particule-de-fluide">
 <h2>Particule de fluide<a class="headerlink" href="#particule-de-fluide" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Définition : Particule de fluide</strong></p>
-<p>Dans un fluide, on peut isoler mentalement un volume infinitésimal <span class="math notranslate nohighlight">\(d\tau_Q\)</span> autour d’un point Q. On appelle ce petit élément <strong>particule de fluide</strong>.</p>
+<p><strong>Particule de fluide</strong></p>
+<p>Dans un fluide, on peut isoler mentalement un volume infinitésimal <span class="math notranslate nohighlight">\(d^3\tau_Q\)</span> autour d’un point Q. On appelle ce petit élément <strong>particule de fluide</strong>.</p>
 </div>
-<p><strong>Caractère infinitésimal</strong><br />
-Le caractère infinitésimal permet d’appliquer les méthodes du calcul différentiel. Ainsi les grandeurs internes sont considérées comme homogène sur le petit volume: la masse volumique, le champ de pesanteur…</p>
-<p>Attention, ces grandeurs peuvent par contre varier d’une particule de fluide à l’autre.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Système non fermé</strong><br />
-A priori, une particule de fluide est un système non fermé c’est-à-dire qu’il peut échanger de la matière avec l’extérieur. Nous travaillerons ici dans le cadre de la statique des fluides. L’évolution est alors supposée stationnaire de sorte qu’on pourra considérer que la masse (et donc la masse volumique) de la particule est constante. Cette hypothèse n’est plus forcément vérifiée en dynamique des fluides.</p>
+<div class="sidebar">
+<p class="sidebar-title">Caractère infinitésimal</p>
+<p>Le caractère infinitésimal permet d’appliquer les méthodes du calcul différentiel. Ainsi les grandeurs internes sont considérées comme homogène sur le petit volume: la masse volumique, le champ de pesanteur…</p>
+<p><em>Attention, ces grandeurs peuvent par contre varier d’une particule de fluide à l’autre : elles dépendront du point M où l’on considère la particule de fluide : <span class="math notranslate nohighlight">\(P(M), \rho(M)\)</span> … d’où le nom de “champ” de pression par exemple.</em></p>
 </div>
-</details></div>
-<div class="section" id="bilan-des-forces">
-<h2>Bilan des forces<a class="headerlink" href="#bilan-des-forces" title="Permalink to this headline">¶</a></h2>
-<p><strong>Bilan des forces</strong><br />
-Deux forces s’appliquent sur la particule de fluide:</p>
+<div class="topic">
+<p class="topic-title first">Bilan des forces</p>
+<p>Deux forces s’appliquent sur la particule de fluide:</p>
 <ul class="simple">
-<li><p>l’action de la pesanteur. Elle s’applique à tout le volume <span class="math notranslate nohighlight">\(d\tau_Q\)</span>. On parle de <strong>force volumiques</strong>. La masse volumique et le champ de pesanteur étant considéré comme homogènes, l’action de la pesanteur est modélisée par une force ponctuelle <span class="math notranslate nohighlight">\(\overrightarrow{dP} = \rho d\tau_Q \overrightarrow{g}\)</span>.</p></li>
+<li><p>l’action de la pesanteur. Elle s’applique à tout le volume <span class="math notranslate nohighlight">\(d^3\tau_Q\)</span>. On parle de <strong>force volumiques</strong>. La masse volumique et le champ de pesanteur étant considéré comme homogènes, l’action de la pesanteur est modélisée par une force ponctuelle <span class="math notranslate nohighlight">\(\overrightarrow{d^3P} = \rho d^3\tau_Q \overrightarrow{g}\)</span>.</p></li>
 <li><p>l’action de contact fluide environnant sur la particule de fluide. Ce sont des forces <strong>surfaciques</strong>. Pour chaque surface de contact, cette action se décompose en deux parties</p>
 <ul>
-<li><p>l’action normale qui représente les forces de pression. Elle a une expression de la forme <span class="math notranslate nohighlight">\(\overrightarrow{dF_{pression}}=P_{surface}\overrightarrow{dS}\)</span>. Nous allons voir ensuite comment réexprimer cette force.</p></li>
+<li><p>l’action normale qui représente les forces de pression. Elle a une expression de la forme <span class="math notranslate nohighlight">\(\overrightarrow{d^2 F_{pression}}=P_{surface}\overrightarrow{d^2 S}\)</span>. Nous allons voir ensuite comment réexprimer cette force.</p></li>
 <li><p>l’action tangentielle. Le fluide étant au repos, on considèrera celle-ci nulle.</p></li>
 </ul>
 </li>
 </ul>
 </div>
+</div>
 <div class="section" id="equivalent-volumique-des-forces-de-pression">
 <h2>Equivalent volumique des forces de pression<a class="headerlink" href="#equivalent-volumique-des-forces-de-pression" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Fondamental : Equivalent volumique des forces de pression</strong></p>
+<p><strong>Equivalent volumique des forces de pression</strong></p>
 <p>Pour une particule de fluide en un point M dans un fluide où le champ de pression est P, la résultante des forces de pression s’appliquant sur la particule de fluide peut se réécrire sous la forme:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30353ba0-c79b-49ba-9f3f-f4831f1e8df4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-30353ba0-c79b-49ba-9f3f-f4831f1e8df4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\overrightarrow{dF_{pression}} = - \overrightarrow{grad}P d\tau_Q
+<div class="amsmath math notranslate nohighlight" id="equation-6e2a1993-10ba-4f08-8d1d-65a4f3bb9de0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-6e2a1993-10ba-4f08-8d1d-65a4f3bb9de0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\overrightarrow{d^3 F_{pression}} = - \overrightarrow{grad}P d^3 \tau_Q
 \end{equation}\]</div>
 <p>On obtient ainsi une expression proportionnelle au volume donc <strong>comme si</strong> l’action de la pression s’exerçait en volume. D’où le nom <strong>d’équivalent volumique des forces de pression</strong>.</p>
 </div>
-<p><strong>Démonstration</strong><br />
-On va se placer dans un système de coordonnées cartésiennes où le point M est de coordonnées (x,y,z). La démonstration peut se généraliser aux différents systèmes de coordonnées mais l’introduction du gradient permettra cette généralisation.</p>
+<div class="important admonition">
+<p class="admonition-title">Démonstration</p>
+<blockquote>
+<div><p>On va se placer dans un système de coordonnées cartésiennes où le point M est de coordonnées (x,y,z). La démonstration peut se généraliser aux différents systèmes de coordonnées mais l’introduction du gradient permettra cette généralisation.</p>
 <p>On s’intéresse plus particulièrement aux actions de pression sur les deux faces inférieures et supérieures (c’est-à-dire aux côte z et z+dz).</p>
+</div></blockquote>
 <div class="figure align-center" id="fig-265">
 <img alt="../_images/thermo_statique_pression.jpg" src="../_images/thermo_statique_pression.jpg" />
 </div>
-<p>La pression sur la surface supérieure est <span class="math notranslate nohighlight">\(P(x,y,z+dz)\)</span> (les variations suivant x et y feraient apparaître des termes d’ordre 2 et sont donc négligés) donc la force exercée sur la partie s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{F_{P,z+dz}} = - P(x,y,z+dz) dxdy \overrightarrow{e_z}\)</span>.</p>
-<p>La pression sur la surface inférieure est <span class="math notranslate nohighlight">\(P(x,y,z)\)</span> (les variations suivant x et y feraient apparaître des termes d’ordre 2 et sont donc négligés) donc la force exercée sur la partie s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{F_{P,z}} = P(x,y,z) dxdy \overrightarrow{e_z}\)</span>.</p>
+<blockquote>
+<div><p>La pression sur la surface supérieure est <span class="math notranslate nohighlight">\(P(x,y,z+dz)\)</span> (les variations suivant x et y feraient apparaître des termes d’ordre 2 et sont donc négligés) donc la force exercée sur la partie s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{d^2 F_{P,z+dz}} = - P(x,y,z+dz) dxdy \overrightarrow{e_z}\)</span>.</p>
+<p>La pression sur la surface inférieure est <span class="math notranslate nohighlight">\(P(x,y,z)\)</span> (les variations suivant x et y feraient apparaître des termes d’ordre 2 et sont donc négligés) donc la force exercée sur la partie s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{d^2 F_{P,z}} = P(x,y,z) dxdy \overrightarrow{e_z}\)</span>.</p>
 <p>La résultante des deux forces considérées ci-dessus est donc:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\overrightarrow{dF_{P,1}} &amp;= \left(P(x,y,z) - P(x,y,z+dz)\right)dxdy \overrightarrow{e_z}\\
+\overrightarrow{d^3 F_{P,1}} &amp;= \left(P(x,y,z) - P(x,y,z+dz)\right)dxdy \overrightarrow{e_z}\\
 &amp;= -\frac{\partial P}{\partial z}dx dy dz\overrightarrow{e_z}\\
-&amp;= -\frac{\partial P}{\partial z} d\tau_Q \overrightarrow{e_z}
+&amp;= -\frac{\partial P}{\partial z} d^3 \tau_Q \overrightarrow{e_z}
 \end{align*}\]</div>
 <p>On a utilisé ici la définition du taux de variation (on rappelle qu’en notation différentielle, le passsage à la limite est implicite): <span class="math notranslate nohighlight">\(\frac{\rm{d}f}{\rm{dx}} = \frac{f(x+dx)-f(x)}{dx}\)</span>. La différence est qu’ici, la fonction P dépend aussi de x et de y, donc c’est une dérivée partielle.</p>
 <p>Remarquons que le raisonnement précédent s’applique aussi aux actions sur les faces perpendiculaires aux axes <span class="math notranslate nohighlight">\(\overrightarrow{e_x}\)</span> et <span class="math notranslate nohighlight">\(\overrightarrow{e_y}\)</span>. Donc la résultante totale des forces s’écrit:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\overrightarrow{dF_{pression}} &amp;= -\left(\frac{\partial P}{\partial z}  \overrightarrow{e_z} + \frac{\partial P}{\partial y}  \overrightarrow{e_y} + \frac{\partial P}{\partial x}  \overrightarrow{e_x}\right) d\tau_Q\\
-\overrightarrow{dF_{pression}} &amp;= - \overrightarrow{grad}P d\tau_Q
+\overrightarrow{d^3 F_{pression}} &amp;= -\left(\frac{\partial P}{\partial z}  \overrightarrow{e_z} + \frac{\partial P}{\partial y}  \overrightarrow{e_y} + \frac{\partial P}{\partial x}  \overrightarrow{e_x}\right) d^3 \tau_Q\\
+\overrightarrow{d^3 F_{pression}} &amp;= - \overrightarrow{grad}P d^3 \tau_Q
 \end{align*}\]</div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Interprétation</strong><br />
-L’équivalent volumique de la résultante des forces de pression est fondamental pour la mise en équation. Mais il permet aussi de mieux comprendre l’influence de va avoir la pression d’un fluide sur un système (que ce soit le fluide lui-même ou un corps étranger).</p>
-<p class="card-text">En effet, on observe que la résultante des forces est opposée au gradient des forces de pression. Ainsi, la force s’effectue en direction des dépressions (zones de pression plus faibles) locales. Nous énoncerons par la suite le théorème d’Archimède mais on peut déjà remarquer qu’il en est la conséquence. Sous l’effet de la pesanteur la pression a tendance a diminuer avec l’altitude (ce sera prouvé par la suite) et donc l’action des forces de pression d’un fluide où le solide est immergé est vers le “haut”.</p>
+</div></blockquote>
 </div>
-</details></div>
+<div class="topic">
+<p class="topic-title first">Interprétation</p>
+<p>L’équivalent volumique de la résultante des forces de pression est fondamental pour la mise en équation. Mais il permet aussi de mieux comprendre l’influence de va avoir la pression d’un fluide sur un système (que ce soit le fluide lui-même ou un corps étranger).</p>
+<p>En effet, on observe que la résultante des forces est opposée au gradient des forces de pression. Ainsi, la force s’effectue en direction des dépressions (zones de pression plus faibles) locales. Nous énoncerons par la suite le théorème d’Archimède mais on peut déjà remarquer qu’il en est la conséquence. Sous l’effet de la pesanteur la pression a tendance a diminuer avec l’altitude (ce sera prouvé par la suite) et donc l’action des forces de pression d’un fluide où le solide est immergé est vers le “haut”.</p>
+</div>
+</div>
 <div class="section" id="equation-fondamentale-de-la-statique-des-fluides">
 <h2>Equation fondamentale de la statique des fluides<a class="headerlink" href="#equation-fondamentale-de-la-statique-des-fluides" title="Permalink to this headline">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Fondamental : Equation fondamentale de la statique des fluides</strong></p>
+<p><strong>Equation fondamentale de la statique des fluides</strong></p>
 <p>Dans un fluide <strong>au repos</strong> soumis à la seule action extérieure du champ de pesanteur <span class="math notranslate nohighlight">\(\overrightarrow{g}\)</span>, le champ de pression P est donné par l’équation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a93bc86-e1c3-4bdd-a7ae-436f08d76dda">
-<span class="eqno">(5)<a class="headerlink" href="#equation-5a93bc86-e1c3-4bdd-a7ae-436f08d76dda" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fe58ca13-19f5-4d52-bb63-670153996838">
+<span class="eqno">(5)<a class="headerlink" href="#equation-fe58ca13-19f5-4d52-bb63-670153996838" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \rho \overrightarrow{g} - \overrightarrow{grad}P = 0
 \end{equation}\]</div>
 </div>
-<p><strong>Démonstration</strong><br />
-On va travailler sur une particule de fluide et appliquer le principe fondamental de la dynamique dans le référentiel terrestre qu’on suppose galiléen. Le bilan des forces a déjà été fait. Leurs somme est égale à 0 puisque le fluide est supposé au repos (donc la particule de fluide aussi). Il vient:</p>
+<div class="important admonition">
+<p class="admonition-title">Démonstration</p>
+<blockquote>
+<div><p>On va travailler sur une particule de fluide et appliquer le principe fondamental de la dynamique dans le référentiel terrestre qu’on suppose galiléen. Le bilan des forces a déjà été fait. Leurs somme est égale à 0 puisque le fluide est supposé au repos (donc la particule de fluide aussi). Il vient:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\overrightarrow{0} = \rho \overrightarrow{g} d\tau_Q - \overrightarrow{grad}P d\tau_Q\\
+\overrightarrow{0} = \rho \overrightarrow{g} d^3 \tau_Q - \overrightarrow{grad}P d^3 \tau_Q\\
 \overrightarrow{0} = \rho \overrightarrow{g} - \overrightarrow{grad}P
 \end{align*}\]</div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Interprétation</strong><br />
-Comme on l’a déjà dit précédemment, il apparaît que le gradient du champ de pression est colinéaire au champ de pesanteur et dans le même sens. Cela signifie que la pression va diminuer quand on prend de l’altitude.</p>
-<p class="card-text">On peut remarquer aussi qu’en intégrant sur un chemin entre deux altitude <span class="math notranslate nohighlight">\(z_1\)</span> et <span class="math notranslate nohighlight">\(z_2\)</span>, il vient la différence (on a multiplier par une section constante S):</p>
+</div></blockquote>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Besoin d’une équation supplémentaire</p>
+<p>L’équation fondamental de la statique des fluides relie trois grandeurs: le champ de pesanteur (dont il faut connaître l’expression - dans le cadre du cours, il sera supposé uniforme), la masse volumique et la pression. Mais <strong>on ne peut intégrer directement cette équation</strong> car on a priori aucune information sur la dépendance de la masse volumique vis-à-vis des coordonnées ou de la pression.</p>
+<p>Il va donc falloir une équation qui donne une information sur <span class="math notranslate nohighlight">\(\rho\)</span> ou qui relie <span class="math notranslate nohighlight">\(\rho\)</span> à la pression P. C’est <strong>l’équation d’état du fluide</strong>, c’est-à-dire l’équation qui relie les différenes variables qui caractérise le fluide à l’échelle macroscopique (pression, température, masse volumique… ).</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Interprétation</p>
+<p>Comme on l’a déjà dit précédemment, il apparaît que le gradient du champ de pression est colinéaire au champ de pesanteur et dans le même sens. Cela signifie que la pression va diminuer quand on prend de l’altitude.</p>
+<p>On peut remarquer aussi qu’en intégrant sur un chemin entre deux altitude <span class="math notranslate nohighlight">\(z_1\)</span> et <span class="math notranslate nohighlight">\(z_2\)</span>, il vient la différence (on a multiplier par une section constante S):</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \int \overrightarrow{grad}P \overrightarrow{dl} &amp;= \int \rho \overrightarrow{g}\overrightarrow{dl}\\
 P(z_2) - P(z_1) &amp;= \frac{\overrightarrow{P_{colonne}}}{S} \cdot \overrightarrow{e_z}
 \end{align*}\]</div>
-<p class="card-text">où <span class="math notranslate nohighlight">\(\overrightarrow{P_{colonne}}\)</span> correspond au poids de la colonne comprise entre<span class="math notranslate nohighlight">\(z_1\)</span> et <span class="math notranslate nohighlight">\(z_2\)</span> dans un cylindre verticale de section S. La pression en un point correspond donc au poids (surfacique) de la colonne de fluide situé au dessus du point considéré.</p>
-</div>
-</details><div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p><strong>Besoin d’une équation supplémentaire</strong></p>
-<p>L’équation fondamental de la statique des fluides relie trois grandeurs: le champ de pesanteur (dont il faut connaître l’expression - dans le cadre du cours, il sera supposé uniforme), la masse volumique et la pression. Mais <strong>on ne peut intégrer directement cette équation</strong> car on a priori aucune information sur la dépendance de la masse volumique vis-à-vis des coordonnées ou de la pression.</p>
-<p>Il va donc falloir une équation qui donne une information sur <span class="math notranslate nohighlight">\(\rho\)</span> ou qui relie <span class="math notranslate nohighlight">\(\rho\)</span> à la pression P. C’est <strong>l’équation d’état du fluide</strong>, c’est-à-dire l’équation qui relie les différenes variables qui caractérise le fluide à l’échelle macroscopique (pression, température, masse volumique… ).</p>
+<p>où <span class="math notranslate nohighlight">\(\overrightarrow{P_{colonne}}\)</span> correspond au poids de la colonne comprise entre<span class="math notranslate nohighlight">\(z_1\)</span> et <span class="math notranslate nohighlight">\(z_2\)</span> dans un cylindre verticale de section S. La pression en un point correspond donc au poids (surfacique) de la colonne de fluide situé au dessus du point considéré.</p>
 </div>
 </div>
 </div>
@@ -404,16 +415,27 @@ P(z_2) - P(z_1) &amp;= \frac{\overrightarrow{P_{colonne}}}{S} \cdot \overrightar
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="pression.html" title="previous page">Forces de pression et pression</a>
-    <a class='right-next' id="next-link" href="incompressible.html" title="next page">Cas des fluides incompressibles</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pression.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Forces de pression et pression</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="incompressible.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cas des fluides incompressibles</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -429,8 +451,7 @@ P(z_2) - P(z_1) &amp;= \frac{\overrightarrow{P_{colonne}}}{S} \cdot \overrightar
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

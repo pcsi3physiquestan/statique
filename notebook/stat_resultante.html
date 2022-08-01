@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expression de la résultante des forces de pression &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,34 +31,37 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/stat_resultante.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercices d’application" href="stat_ex_app.html" />
+    <link rel="next" title="S’entrainer" href="statique_ex.html" />
     <link rel="prev" title="Cas des gaz parfait: Atmopshère isotherme" href="stat_gp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,13 +79,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,45 +96,69 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="surface.html">
-   Préambule: Surfaces orientées
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stat.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pression.html">
-   Forces de pression et pression
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="equation_stat.html">
-   Equation fondamental de la statique des fluides
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="incompressible.html">
-   Cas des fluides incompressibles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_gp.html">
-   Cas des gaz parfait: Atmopshère isotherme
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Expression de la résultante des forces de pression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_ex_app.html">
-   Exercices d’application
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_td.html">
-   Travaux dirigés
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -221,41 +249,16 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relation-pression-force-rappel">
-   Relation pression-force: Rappel
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#theoreme-d-archimede">
    Théorème d’Archimède
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#corps-immerge-dans-deux-fluides">
-   Corps immergé dans deux fluides
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iceberg">
-   Iceberg
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ballon-ascensionnel">
-   Ballon ascensionnel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#non-application-du-theoreme-d-archimede">
    Non application du théorème d’Archimède
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#methode-barrage">
-   Méthode: Barrage
   </a>
  </li>
 </ul>
@@ -269,151 +272,89 @@
         
               <div>
                 
-  <div class="section" id="expression-de-la-resultante-des-forces-de-pression">
+  <div class="tex2jax_ignore mathjax_ignore section" id="expression-de-la-resultante-des-forces-de-pression">
 <h1>Expression de la résultante des forces de pression<a class="headerlink" href="#expression-de-la-resultante-des-forces-de-pression" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="relation-pression-force-rappel">
-<h2>Relation pression-force: Rappel<a class="headerlink" href="#relation-pression-force-rappel" title="Permalink to this headline">¶</a></h2>
-<p><em>Rappel : Relation pression force</em>
-Pour un corps subissant l’action d’un fluide dont le champ de pression est P, si on note <span class="math notranslate nohighlight">\(\Sigma\)</span> la surface de contact entre le fluide et le corps étudié, la résulante des forces de pression du fluide sur le corps s’écrit:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51d1d301-f4d4-48a6-9dda-e541e20e8b75">
-<span class="eqno">(10)<a class="headerlink" href="#equation-51d1d301-f4d4-48a6-9dda-e541e20e8b75" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\iint_{M \in \Sigma} P \overrightarrow{dS}
+<div class="topic">
+<p class="topic-title first">Rappel : Relation pression force</p>
+<p>Pour un corps subissant l’action d’un fluide dont le champ de pression est P, si on note <span class="math notranslate nohighlight">\(\Sigma\)</span> la surface de contact entre le fluide et le corps étudié, la résulante des forces de pression du fluide sur le corps s’écrit:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9af5725-116b-4437-a6d5-9696f3d45d20">
+<span class="eqno">(9)<a class="headerlink" href="#equation-b9af5725-116b-4437-a6d5-9696f3d45d20" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\iint_{M \in \Sigma} P \overrightarrow{d^2 S}
 \end{equation}\]</div>
 <p>Si la surface de contact est une surface fermée, on note l’intégrale avec un cercle. On a aussi orienté le vecteur surface dans les conventions précisées précédemment (ce devrait être une intégrale double):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a74059ef-9de9-458c-857e-cc1d8cf96a11">
-<span class="eqno">(11)<a class="headerlink" href="#equation-a74059ef-9de9-458c-857e-cc1d8cf96a11" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\oint_{M \in \Sigma}  - P \overrightarrow{dS_{ext}}
+<div class="amsmath math notranslate nohighlight" id="equation-1d4a49c5-0ae6-4286-b7f8-8d1a3de935be">
+<span class="eqno">(10)<a class="headerlink" href="#equation-1d4a49c5-0ae6-4286-b7f8-8d1a3de935be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\oint_{M \in \Sigma}  - P \overrightarrow{d^2 S_{ext}}
 \end{equation}\]</div>
 <p>Pour connaître la résultante des forces, il faut donc:</p>
 <ol class="simple">
 <li><p>Calculer/connaître le champ de pression dans le fluide. Dans l’hypothèse d’un fluide au repos, on utilisera l’équation fondamentale de la statique des fluides et les types d’études vus précédemment.</p></li>
 <li><p>Calculer l’intégrale. La méthode de calcul sera présentée par la suite.</p></li>
 </ol>
-<p>Avant d’apprendre à calculer une telle intégrale, nous allons voir un cas particulier où ce calcul n’est pas nécessaire: le cas d’application du théorème d’Archimède.</p>
 </div>
 <div class="section" id="theoreme-d-archimede">
 <h2>Théorème d’Archimède<a class="headerlink" href="#theoreme-d-archimede" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title">Corps en mouvement</p>
+<p>Il arrive qu’on utilise la poussée d’Archimède alors que si le corps se déplace, le fluide n’est plus au repos. Ceci n’est vrai que si l’on suppose que le fluide est peu perturbé par le mouvement du solide.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Fondamental : Théorème d’Archimède</strong></p>
-<p>Tout corps entièrement immergé au repos subit de la part du fluide une force opposée à celle du poids du volume de fluide déplacé. On appelle cette force la poussée d’Archimède. D’une manière plus générale, elle est définie comme la résultante des forces de pression du fluide:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-947e3133-6328-4975-be03-bd78f3770e0f">
-<span class="eqno">(12)<a class="headerlink" href="#equation-947e3133-6328-4975-be03-bd78f3770e0f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\overrightarrow{\Pi_A} = \oint_{\Sigma}-P(M) \overrightarrow{dS(M)} = - m _{\textrm{fluide déplacé}} \overrightarrow{g}
+<p><strong>Théorème d’Archimède</strong></p>
+<p>Tout corps entièrement immergé au repos subit de la part du fluide une force opposée à celle du poids du volume de fluide déplacé. On appelle cette force la poussée d’Archimède. D’une manière plus générale, elle est définie comme la résultante des forces de pression du fluide (ce devrait être une intégrale double):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-68dcbe73-e039-4fc8-9035-24c21bd35cd9">
+<span class="eqno">(11)<a class="headerlink" href="#equation-68dcbe73-e039-4fc8-9035-24c21bd35cd9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\overrightarrow{\Pi_A} = \oint_{\Sigma}-P(M) \overrightarrow{d^2 S(M)} = - m _{\textrm{fluide déplacé}} \overrightarrow{g}
 \end{equation}\]</div>
 </div>
-<p><strong>Démonstration</strong><br />
-Si le fluide est au repos, alors la relation fondamentale de la statique des fluides implique que le champ de pression ne dépend que de l’altitude. Ainsi, les forces de pression s’exerçant à la frontière du corps immergée sont les mêmes que le corps soit présent ou non. On peut donc mentalement remplacé le corps immergé par le fluide environnant. La force exercée sera la même.</p>
+<div class="topic">
+<p class="topic-title first">Démonstration</p>
+<p>Si le fluide est au repos, alors la relation fondamentale de la statique des fluides implique que le champ de pression ne dépend que de l’altitude. Ainsi, les forces de pression s’exerçant à la frontière du corps immergée sont les mêmes que le corps soit présent ou non. On peut donc mentalement remplacé le corps immergé par le fluide environnant. La force exercée sera la même.</p>
 <p>Or le fluide étant au repos, cette masse de fluide est équilibrée par la force de pression <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_A}\)</span> et son propre poids. Il vient que <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_A} = - \overrightarrow{P_{fluide deplace}}\)</span></p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Corps en mouvement</strong><br />
-Il arrive qu’on écrive un PFD en utilise la poussée d’Archimède alors que si le corps se déplace, le fluide n’est plus au repos. Ceci n’est vrai (en première approximation) que si l’on néglige les frottements du fluide et que l’on suppose que le fluide est peu perturbé par le solide. Cela implique que le mouvement du corps est relativement lent (on rappelle que le frottement fluide est proportionnel à la vitesse).</p>
-<p class="card-text">Si le corps est moins dense que l’eau, il va remonter, s’il est plus dense, il va tomber au fond.</p>
 </div>
-</details><p><strong>Centre de poussée</strong><br />
-N’oublions que les corps étudiée ne sont pas des points matériels mais des solides. Il faudrait donc définir la résultante des forces de pression ET le moment résultant de ces forces. En pratique, on définit plutôt un point de moment nul appelé <strong>centre de poussée.</strong></p>
+<div class="topic">
+<p class="topic-title first">Centre de poussée</p>
+<p>N’oublions que les corps étudiée ne sont pas des points matériels mais des solides. Il faudrait donc définir la résultante des forces de pression ET le moment résultant de ces forces. En pratique, on définit plutôt un point de moment nul appelé <strong>centre de poussée.</strong></p>
 <p>La démonstration précédente permet de comprendre que le centre de poussée C correspond au centre d’inertie du volume de fluide déplacé. Dans le cas des fluides homogènes, le placement d’un tel point peut se faire qualitativement.</p>
 <p>Si la répartition de masse du corps considéré et du fluide déplacé est différente, C et G le centre d’inertie du corps ne sont pas confondu. <strong>On s’entraînera à montrer</strong> que les positions d’équilibre correspondent alors aux cas où C et G sont à la verticale l’un de l’autre et que la seule position stable au cas où le centre d’inertie est sous le centre de poussée. Cela explique qu’on a tendance à placer les marchandises lourdes au fond des bateaux.</p>
 <div class="figure align-center" id="fig-267">
 <img alt="../_images/thermo_centre_pousse.jpg" src="../_images/thermo_centre_pousse.jpg" />
 </div>
 </div>
-<div class="section" id="corps-immerge-dans-deux-fluides">
-<h2>Corps immergé dans deux fluides<a class="headerlink" href="#corps-immerge-dans-deux-fluides" title="Permalink to this headline">¶</a></h2>
-<p><strong>Horizontalité de l’interface</strong><br />
-Pour deux fluides en contact, l’étude de l’interface permet de montrer que la surface de contact est nécessaire horizontale et que le fluide le plus de dense est au dessous.</p>
-<p>On notera aussi que l’interface étant au repos, il y a <strong>nécessairement continuité du champ de pression à l’interface entre les deux fluides.</strong>.</p>
-<p>Ces observations seront nuancées par la notion de tension de surface en deuxième année. Pour les systèmes étudiés en première année, on considérera cet effet comme négligeable.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque : Théorème d’Archimède et multiples fluides<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">Le théorème d’Archimède nécessite que le corps soit <strong>entièrement immergé</strong>. Mais le théorème s’applique si plusieurs fluides (au repos) différents entourent le corps.</p>
-<p class="card-text">C’est le cas d’un objet flottant: il est entouré par l’eau ET l’air. Le théorème d’Archimède s’applique alors en divisant en deux le corps: on distinguera la partie immergée dans l’eau et la partie immergée dans l’air. Comme nous le verrons, la masse volumique de l’air étant très faible devant celle de l’eau, on néglige souvent la poussée d’Archimède sur la partie dans l’air mais en toute rigueur, elle doit être comptabilisée.</p>
-<p class="card-text">Une justification sera donnée en classe.</p>
-</div>
-</details></div>
-<div class="section" id="iceberg">
-<h2>Iceberg<a class="headerlink" href="#iceberg" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>On veut calculer le volume émergé de l’iceberg qu’on suppose de masse m répartie uniformément et de volume V. On suppose de plus que l’air et l’eau sont pour les dimensions considérées des fluides homogènes.</p>
-<p>On donne: <span class="math notranslate nohighlight">\(\rho_{glace} = 0,9 \rho_{eau}\)</span> et <span class="math notranslate nohighlight">\(\rho_{air} \ll \rho_{glace}\)</span>.</p>
-</div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Démonstration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">Notons <span class="math notranslate nohighlight">\(V_i\)</span> le volume immergé dans l’eau et <span class="math notranslate nohighlight">\(V_e\)</span> le voume émergé (donc immergé dans l’air). Les forces qui s’appliquent sur l’iceberg sont (on a pris un axe Oz vertical vers le haut):</p>
+<div class="topic">
+<p class="topic-title first">Corps immergé dans deux fluides</p>
 <ul class="simple">
-<li><p class="card-text">son poids: <span class="math notranslate nohighlight">\(\overrightarrow{P} = - \rho_{glace} (V_i + V_e) g \overrightarrow{e_z}\)</span></p></li>
-<li><p class="card-text">la poussée d’Archimède associée à l’eau: <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_{A,eau}} = \rho_{eau} V_i g \overrightarrow{e_z}\)</span></p></li>
-<li><p class="card-text">la poussée d’Archimède associée à l’air: <span class="math notranslate nohighlight">\(\overrightarrow{\Pi_{A,air}} = \rho_{air} V_e g \overrightarrow{e_z}\)</span></p></li>
+<li><p><strong>Horizontalité de l’interface</strong> : Pour deux fluides en contact, l’étude de l’interface permet de montrer que la surface de contact est nécessaire horizontale et que le fluide le plus de dense est au dessous.</p></li>
+<li><p>On notera aussi que l’interface étant au repos, il y a <strong>nécessairement continuité du champ de pression à l’interface entre les deux fluides.</strong>.</p>
+<ul>
+<li><p>Ces observations seront nuancées par la notion de tension de surface en deuxième année. Pour les systèmes étudiés en première année, on considérera cet effet comme négligeable.</p></li>
 </ul>
-<p class="card-text">Le bilan statique s’écrit: <span class="math notranslate nohighlight">\(\overrightarrow{P} + \overrightarrow{\Pi_{A,eau}} + \overrightarrow{\Pi_{A,air}} = \overrightarrow{0}\)</span> soit:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\rho_{eau} V_i +\rho_{air}V_e - \rho_{glace} (V_i + V_e))g = 0\\
-&amp; \Longrightarrow\frac{V_i}{V_e} = \frac{\rho_{glace} - \rho_{air}}{\rho_{eau} - \rho_{glace}} \approx 9
-\end{align*}\]</div>
+</li>
+<li><p>Le théorème d’Archimède nécessite que le corps soit <strong>entièrement immergé</strong>. Mais le théorème s’applique si plusieurs fluides (au repos) différents entourent le corps.</p></li>
+</ul>
+<blockquote>
+<div><p>C’est le cas d’un objet flottant: il est entouré par l’eau ET l’air. Le théorème d’Archimède s’applique alors en divisant en deux le corps: on distinguera la partie immergée dans l’eau et la partie immergée dans l’air. Comme nous le verrons, la masse volumique de l’air étant très faible devant celle de l’eau, on néglige souvent la poussée d’Archimède sur la partie dans l’air mais en toute rigueur, elle doit être comptabilisée.</p>
+</div></blockquote>
 </div>
-</details></div>
-<div class="section" id="ballon-ascensionnel">
-<h2>Ballon ascensionnel<a class="headerlink" href="#ballon-ascensionnel" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>On s’intéresse à un ballon de volume V constant gonflé avec un gaz plus léger que l’air atmosphérique. Dans ce modèle, nous supposerons que le volume V est suffisamment petit pour qu’on puisse considérer que la masse volumique de l’air qui entoure le ballon est constante. On la note: <span class="math notranslate nohighlight">\(\rho_{air}\)</span> On note m la masse totale du ballon et (<span class="math notranslate nohighlight">\(\rho\)</span> sa masse volumique moyenne, c’est-à-dire que  <span class="math notranslate nohighlight">\(\rho = \frac{m}{V}\)</span>, il faut compter dans m la masse du gaz ET de l’enceinte).</p>
-<ol class="simple">
-<li><p>Etablir l’équation différentielle du mouvement du ballon en supposant le théorème d’Archimède applicable.</p></li>
-<li><p>On suppose qu’à une altitude <span class="math notranslate nohighlight">\(z_0\)</span>, le ballon est à l’équilibre. Faut-il augmenter ou diminuer la masse volumique du ballon pour monter? Justifier qu’on chauffe alors le gaz à l’intérieur pour s’élever.</p></li>
-<li><p>Pour descendre, on ouvre en général une soupape qui libère du gaz. Justifier la manoeuvre.</p></li>
-</ol>
 </div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Réponses<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<ol class="simple">
-<li><p class="card-text">On est dans le cas où l’on assimile le champ de l’air à celui qu’il aurait au repos ce qui permet d’appliquer le théorème d’Archimède.</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight" id="equation-a9fb27b0-c8d7-432e-91f5-9bf6f1e11eef">
-<span class="eqno">(13)<a class="headerlink" href="#equation-a9fb27b0-c8d7-432e-91f5-9bf6f1e11eef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-m \ddot z = \left(\rho_{air} - \rho\right) g V
-\end{equation}\]</div>
-<ol class="simple">
-<li><p class="card-text">Il faut évidemment diminuer la masse volumique du ballon pour qu’il monte. En considérant le volume du ballon comme fixe (le ballon est tendu) et sa pression comme fixe (elle es imposée par la pression extérieure, la loi des gaz parfait montre qu’une diminution de la masse est associée à une augmentation de température.</p></li>
-<li><p class="card-text">Cette fois-ci, la diminution de matière entraîne une diminution du volume (T et P constants) donc une augmentation de la masse volumique (à cause de la masse de la nacelle), ce qui permet de faire redescendre le ballon.
-\end{meth}</p></li>
-</ol>
-</div>
-</details></div>
 <div class="section" id="non-application-du-theoreme-d-archimede">
 <h2>Non application du théorème d’Archimède<a class="headerlink" href="#non-application-du-theoreme-d-archimede" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Exemple : Exemple de cas de non application</p>
+<div class="tip admonition">
+<p class="admonition-title">Cas de non application</p>
 <p>Le théorème d’Archimède ne s’applique que si le corps est entièrement immergé dans les fluide, c’est-à-dire qu’il n’y pas de contact solide en certains points.</p>
 <p>Sinon, il ne s’applique pas. Par exemple un corps posé au fond de l’eau ou un système dont seule une aprtie est en contact avec le fluide (barrage).</p>
 </div>
 <p>Si le théorème d’Archimède ne s’applique pas, la résultat des forces de pression ne peut se calculer qu’au moyen de l’intégrale:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f948321d-2710-4d25-8e32-5d143e44fd36">
-<span class="eqno">(14)<a class="headerlink" href="#equation-f948321d-2710-4d25-8e32-5d143e44fd36" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\iint_{M \in \Sigma} P \overrightarrow{dS}
+<div class="amsmath math notranslate nohighlight" id="equation-39a0c1a1-1b66-48d9-a31e-756012757077">
+<span class="eqno">(12)<a class="headerlink" href="#equation-39a0c1a1-1b66-48d9-a31e-756012757077" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\iint_{M \in \Sigma} P \overrightarrow{d^2 S}
 \end{equation}\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Bases locales</p>
+<p>Lorsqu’on utilise des coordonnées cylidnriques ou sphériques, il arrive fréquemment que le vecteur unitaire portant <span class="math notranslate nohighlight">\(\overrightarrow{d^2 S}\)</span> <strong>varie quand la variable d’intégration varie</strong>. Il est donc important de projeter de tels vecteurs dans une base globale (cartésienne).</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
 <p><strong>Calcul de la résultante des forces</strong></p>
 <p>Calculer la résultante des forces nécessite de choisir un système de coordonnées adapté puis d’exprimer chaque élément de l’intégrale dans ce système. Les étapes sont  donc:</p>
 <ol class="simple">
@@ -423,67 +364,8 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
 <li><p>Réécrire alors l’intégrale et en déduire les variables d’intégration. On déterminer alors les bornes d’intégration de chaque intégrale en fonction de la surface d’intégration.</p></li>
 <li><p>Dans le cadre du programme, l’intégrale de surface à calculer est une intégrale à variable séparable. On calcule donc séparément deux intégrales qu’on multiplie.</p></li>
 </ol>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p><strong>Bases locales</strong></p>
-<p>Lorsqu’on utilise des coordonnées cylidnriques ou sphériques, il arrive fréquemment que le vecteur unitaire portant <span class="math notranslate nohighlight">\(\overrightarrow{dS}\)</span> <strong>varie quand la variable d’intégration varie</strong>. Il est donc important de projeter de tels vecteurs dans une base globale (cartésienne). Nous verrons cela sur l’exemple du barrage.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Symétrie</strong><br />
-L’intégrand est un vecteur (<span class="math notranslate nohighlight">\(P \overrightarrow{dS}\)</span>) et on peut donc avoir à intégrer deux ou trois composantes séparément. Dans de nombreux cas l’intégration de toutes les composantes n’est pas nécessaire car certaines composantes sont nulles et ce résultat peut être déduit de l’étude des symétries du problème.</p>
 </div>
-</details><p><strong>Moment résultant</strong><br />
-Cette méthode de calcul permettrait aussi de calcul un moment résultant.</p>
-</div>
-<div class="section" id="methode-barrage">
-<h2>Méthode: Barrage<a class="headerlink" href="#methode-barrage" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>On considère un barrage assimilable à un demi-cylindre de hauteur H et de rayon R. L’eau est retenue à “l’intérieur” du demi-cylindre. Calculer la résultante des forces de pression exercée sur le barrage. On prendra l’origine des <strong>profondeur</strong> z à la surface de l’eau où l’atmosphère supérieur y impose une pression <span class="math notranslate nohighlight">\(P_0\)</span>. Faire l’application numérique pour un barrage de 10m de haut de rayon 30m.</p>
-</div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Démonstration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Choix du système de coordonnées</strong></p>
-<p class="card-text">La surface de contact étant un cylindre, on va utiliser un système de coordonnées cylindriques d’axe Oz l’axe du cylindre.</p>
-<p class="card-text"><strong>Détermination du champ de pression</strong></p>
-<p class="card-text">On utilise l’équation barométrique. <span class="math notranslate nohighlight">\(P(z) - P(z=0) = P(z) - P_0 = \rho g z\)</span> d’où <span class="math notranslate nohighlight">\(P(z) = P_0 + \rho g z\)</span></p>
-<p class="card-text"><strong>Vecteur surface.</strong></p>
-<p class="card-text">Sur un petit élément de surface du barrage, les coordonnées qui varient sont l’angle <span class="math notranslate nohighlight">\(\theta\)</span> (dont le déplacement élémentaire correspondant est <span class="math notranslate nohighlight">\(R d\theta\)</span>) et la hauteur z (dont le déplacement élémentaire correspondant est <span class="math notranslate nohighlight">\(dz\)</span>).</p>
-<p class="card-text">La surface vaut donc <span class="math notranslate nohighlight">\(dS = R dz d\theta\)</span>.</p>
-<p class="card-text">Le vecteur normale est <span class="math notranslate nohighlight">\(\overrightarrow{e_r}\)</span>. On l’oriente positivement <span class="math notranslate nohighlight">\(\overrightarrow{dS} = R dz d\theta \overrightarrow{e_r}\)</span> de sorte que la force de pression élémentaire est: <span class="math notranslate nohighlight">\(\overrightarrow{dF} = P R dz d\theta \overrightarrow{e_r}\)</span>.</p>
-<p class="card-text"><strong>Expression del’intégrale</strong></p>
-<p class="card-text">L’intégrale s’écrit donc:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\overrightarrow{F} = \iint_{M\in surface} P R dz d\theta \overrightarrow{e_r}\\
-\overrightarrow{F} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} P R dz d\theta \overrightarrow{e_r}\\
-\overrightarrow{F} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} P R \left(\cos \theta \overrightarrow{e_x} + \sin \theta \overrightarrow{e_y}\right) dz d\theta
-\end{align*}\]</div>
-<p class="card-text">On observe que les variables d’intégration sont z et <span class="math notranslate nohighlight">\(\theta\)</span>. On définit les bornes en fonction de la forme du barrage. Il est important de remarquer que le choix du paramétrage influe sur les bornes (ici l’origine des angles <span class="math notranslate nohighlight">\(\theta\)</span> qui correspond à l’axe Ox est pris sur un des bords du demi-cercle.</p>
-<p class="card-text">On remarque que le vecteur <span class="math notranslate nohighlight">\(\overrightarrow{e_r}\)</span> va varier durant l’intégration (il dépend de <span class="math notranslate nohighlight">\(\theta\)</span>), on l’a donc projeté sur une base cartésienne.</p>
-<p class="card-text"><strong>Calcul de l’intégrale</strong></p>
-<p class="card-text">Avant de se lancer dans le calcul, on va utiliser les symétries. Ici la surface de contact est symétrique par rapport à au plan xOy de sorte qu’on attend que la composante suivant <span class="math notranslate nohighlight">\(\overrightarrow{e_x}\)</span> sera nulle (on pourra s’en convaincre en la calculant). On va donc projeter la résultante suivant <span class="math notranslate nohighlight">\(\overrightarrow{e_y}\)</span> et ne calculer que cette composante.</p>
-<p class="card-text">L’intégrale est à variable séparable, c’est-à-dire que la fonction peut être écrite comme un produit de deux fonctions d’une variable z et <span class="math notranslate nohighlight">\(\theta\)</span> de sorte que l’intégrale double se réécrit comme le produit de deux intégrales simples:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\overrightarrow{F} \cdot \overrightarrow{e_y} = \int_{z=0}^{z=H} \int_{\theta = 0}^{\theta = \pi} \left(P_0 + \rho g z\right) R \sin \theta  dz d\theta \\
-\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(\int_{z=0}^{z=H} \left(P_0 + \rho g z\right) dz\right) \left(\int_{\theta = 0}^{\theta = \pi} \sin \theta d\theta\right) \\
-\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(P_0 H + \frac{\rho g H^2}{2}\right) \left(2\right) \\
-\overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(2 P_0 H + \rho g H^2\right)
-\end{align*}\]</div>
-</div>
-</details></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -509,16 +391,27 @@ Démonstration<div class="summary-down docutils">
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="stat_gp.html" title="previous page">Cas des gaz parfait: Atmopshère isotherme</a>
-    <a class='right-next' id="next-link" href="stat_ex_app.html" title="next page">Exercices d’application</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="stat_gp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Cas des gaz parfait: Atmopshère isotherme</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="statique_ex.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">S’entrainer</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -534,8 +427,7 @@ Démonstration<div class="summary-down docutils">
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

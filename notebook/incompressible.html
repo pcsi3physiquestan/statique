@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cas des fluides incompressibles &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/incompressible.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +58,10 @@
     <link rel="next" title="Cas des gaz parfait: Atmopshère isotherme" href="stat_gp.html" />
     <link rel="prev" title="Equation fondamental de la statique des fluides" href="equation_stat.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,13 +79,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,45 +96,69 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="surface.html">
-   Préambule: Surfaces orientées
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stat.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pression.html">
-   Forces de pression et pression
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="equation_stat.html">
-   Equation fondamental de la statique des fluides
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Cas des fluides incompressibles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_gp.html">
-   Cas des gaz parfait: Atmopshère isotherme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_resultante.html">
-   Expression de la résultante des forces de pression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_ex_app.html">
-   Exercices d’application
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_td.html">
-   Travaux dirigés
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -221,26 +249,11 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#equation-barometrique">
    Equation barométrique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equation-barometrique-interpretation">
-   Equation barométrique: Interprétation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#validite-du-modele-incompressible">
-   Validité du modèle incompressible
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#barometre">
-   Baromètre
   </a>
  </li>
 </ul>
@@ -254,28 +267,33 @@
         
               <div>
                 
-  <div class="section" id="cas-des-fluides-incompressibles">
+  <div class="tex2jax_ignore mathjax_ignore section" id="cas-des-fluides-incompressibles">
 <h1>Cas des fluides incompressibles<a class="headerlink" href="#cas-des-fluides-incompressibles" title="Permalink to this headline">¶</a></h1>
-<p><em>Nous allons commencer par traiter un premier exemple de fluide: les fluides incompressibles (ou peu compressibles). Un fluide peu compressible est un fluide pour lequel la masse volumique varie peu lorsque la pression varie. On fera ici l’hypothèse qu’il est incompressible, c’est-à-dire que sa masse volumique est la même quelques soient les conditions.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Un fluide est _<em>incompressible</em> si sa masse volumique est la même quelques soient les conditions de pression.</p>
+</div>
 <div class="section" id="equation-barometrique">
 <h2>Equation barométrique<a class="headerlink" href="#equation-barometrique" title="Permalink to this headline">¶</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Il s’agit de profondeur soit la coordonnée verticale pour un axe pris vers le <strong>bas</strong>.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Fondamental : Equation barométrique - Champ de pression pour un fluide incompressible</strong></p>
+<p><strong>Equation barométrique - Champ de pression pour un fluide incompressible</strong></p>
 <p>Dans un fluide incompressible de masse volumique <span class="math notranslate nohighlight">\(\rho_0\)</span> dans un champ de pesanteur d’intensité <span class="math notranslate nohighlight">\(g\)</span>, le champ de pression ne dépend que de la profondeur. La variation de pression <span class="math notranslate nohighlight">\(\Delta P = P(h_2) - P(h_1)\)</span> entre les <strong>profondeurs</strong> <span class="math notranslate nohighlight">\(h_2\)</span> et <span class="math notranslate nohighlight">\(h_1\)</span> s’écrit:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d19593d0-9894-466d-bb9f-7421752bdc07">
-<span class="eqno">(6)<a class="headerlink" href="#equation-d19593d0-9894-466d-bb9f-7421752bdc07" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff1eab15-b898-476a-b11b-efe7e7613ad4">
+<span class="eqno">(6)<a class="headerlink" href="#equation-ff1eab15-b898-476a-b11b-efe7e7613ad4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta P = P(h_2) - P(h_1) = \rho_0 g (h_2 - h_1)
 \end{equation}\]</div>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Il s’agit de profondeur soit la coordonnée verticale pour un axe pris vers le <strong>bas</strong>.</p>
-</div>
-<p><strong>Démonstration</strong><br />
-On applique l’équation fondamental de la dynamique avec <span class="math notranslate nohighlight">\(\rho_0\)</span> uniforme (on oriente l’axe z vers le bas et les axes x et y sont horizontaux):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06c7bac5-183b-4099-a3a9-eeb7ffd60c21">
-<span class="eqno">(7)<a class="headerlink" href="#equation-06c7bac5-183b-4099-a3a9-eeb7ffd60c21" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="important admonition">
+<p class="admonition-title">Démonstration</p>
+<blockquote>
+<div><p>On applique l’équation fondamental de la dynamique avec <span class="math notranslate nohighlight">\(\rho_0\)</span> uniforme (on oriente l’axe z vers le bas et les axes x et y sont horizontaux):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5662c2d9-0963-481a-a9bb-28faa0090cae">
+<span class="eqno">(7)<a class="headerlink" href="#equation-5662c2d9-0963-481a-a9bb-28faa0090cae" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \begin{cases}
 \frac{\partial P}{\partial x} &amp;= 0\\
 \frac{\partial P}{\partial y} &amp;= 0\\
@@ -283,86 +301,14 @@ On applique l’équation fondamental de la dynamique avec <span class="math not
 \end{cases}
 \end{equation}\]</div>
 <p>Les deux premières équations permette de dire que le champ de pression ne dépend que de z. On peut donc réécrire P comme une fonction d’une seule variable <span class="math notranslate nohighlight">\(P(z)\)</span> et la dérivée partielle suivant z devient une dérivée droite. En intégrant entre <span class="math notranslate nohighlight">\(z = h_1\)</span> et <span class="math notranslate nohighlight">\(z = h_2\)</span>, il vient l’équation demandée (on rappelle que <span class="math notranslate nohighlight">\(\rho_0\)</span> est uniforme).</p>
+</div></blockquote>
 </div>
-<div class="section" id="equation-barometrique-interpretation">
-<h2>Equation barométrique: Interprétation<a class="headerlink" href="#equation-barometrique-interpretation" title="Permalink to this headline">¶</a></h2>
-<p><strong>Interprétation</strong><br />
-On peut remarquer à nouveau que la variation de pression correspond à <span class="math notranslate nohighlight">\(\rho_0 g \Delta h\)</span>, soit le poids, par unité de surface de la colonne de fluide se situant au dessus sur une hauteur <span class="math notranslate nohighlight">\(\Delta h\)</span>.</p>
+<div class="topic">
+<p class="topic-title first">Interprétation</p>
+<p>On peut remarquer à nouveau que la variation de pression correspond à <span class="math notranslate nohighlight">\(\rho_0 g \Delta h\)</span>, soit le poids, par unité de surface de la colonne de fluide se situant au dessus sur une hauteur <span class="math notranslate nohighlight">\(\Delta h\)</span>.</p>
 <p>On remarquera aussi que le champ de pression ne varie pas à altitude constante <strong>quelque soit la forme du fluide.</strong>. Il suffit que les différentes parties du fluide communiquent.</p>
 </div>
-<div class="section" id="validite-du-modele-incompressible">
-<h2>Validité du modèle incompressible<a class="headerlink" href="#validite-du-modele-incompressible" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>Dans le cas de l’eau, on peut donner le coefficient de compressibilité isotherme:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c46ad143-feba-4e32-9849-987abddc0fab">
-<span class="eqno">(8)<a class="headerlink" href="#equation-c46ad143-feba-4e32-9849-987abddc0fab" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\chi_{T} = \frac{1}{\rho}\left(\frac{\partial \rho}{\partial P}\right)_{T} = 5 \times 10^{-10} \rm{Pa^{-1}}
-\end{equation}\]</div>
-<p>où l’indice T signifie que la température est maintenue constante.</p>
-<ol class="simple">
-<li><p>Rappeler la valeur numérique de la masse volumique de l’eau</p></li>
-<li><p>Déduire du coefficient <span class="math notranslate nohighlight">\(\chi_T\)</span> une relation entre la variation <span class="math notranslate nohighlight">\(d\rho\)</span> et la variation <span class="math notranslate nohighlight">\(dP\)</span>.</p></li>
-<li><p>En déduire une estimation de la variation relative <span class="math notranslate nohighlight">\(\frac{\Delta \rho}{\rho_0}\)</span> pour une variation d’altitude <span class="math notranslate nohighlight">\(\Delta z\)</span> en considérant que le champ de pression suit le modèle d’un fluide incompressible.</p></li>
-<li><p>Estimer la variation d’altitude nécessaire pour observer une variation de 1% de la masse volumique. Commenter l’hyptohèse de fluide incompressible dans le cas de l’eau.</p></li>
-</ol>
 </div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Démonstration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><em>Rappel : La masse volumique de l’eau (à connaître) est <span class="math notranslate nohighlight">\(\rho_0 = 10^3 \rm{kg.m^{_3}}\)</span>.</em></p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\frac{1}{\rho}\frac{\partial \rho}{\partial P} &amp;= \chi_T\\
-\frac{d\rho}{\rho} &amp;= \chi_T dP\\
-\rho &amp;= \rho_0 e^{\chi_T \Delta P}\\
-\rho &amp;= \rho_0 e^{\chi_T \rho_0 g \Delta z}\\
-\frac{\rho - \rho_0}{\rho_0} &amp;= e^{\chi_T \rho_0 g \Delta z} - 1\\
-\frac{\rho - \rho_0}{\rho_0} &amp;\approx \chi_T \rho_0 g \Delta z\\
-\Delta z &amp;\approx \frac{1}{\chi_T\rho_0 g} \frac{\Delta \rho}{\rho_0}\\
-\Delta z &amp; \approx 10^4 \rm{m}
-\end{align*}\]</div>
-<p class="card-text">Dans ce calcul, on a remplacer la dérivée partielle par une dérivée droite en supposant que la température était uniforme, donc la masse volumique ne peut plus dépendre que de P. On linéarise ensuite l’exponentielle en considérant que son argument est faible (validé puisqu’on veut une variation de 1%</p>
-<p class="card-text">La profondeur nécessaire est énorme et on peut donc largement faire l’hypothèse d’u fluide incompressible pour l’eau.</p>
-<p class="card-text">On pourra retenir que les fluides incompressibles possèdent un coefficient de compressibilité isotherme très faible.</p>
-</div>
-</details></div>
-<div class="section" id="barometre">
-<h2>Baromètre<a class="headerlink" href="#barometre" title="Permalink to this headline">¶</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Exercice</p>
-<p>Le baromètre le plus courant est le baromètre de Torricelli. Il s’agit d’un tube en U fermé à une extrémité et l’autre extrémité est ouverte et à l’air libre. Du côté fermé, le mercure est surmonté par du vide en première approximation (P=0).</p>
-<ol class="simple">
-<li><p>Exprimer la différence de hauteur h entre les deux surfaces libres du mercure.</p></li>
-<li><p>On donne la masse volumique du mercure <span class="math notranslate nohighlight">\(\rho_{Hg} = 13,5 \times 10^3 \rm{kg.m^{-3}}\)</span>. Justifier l’utilisation du mercure plutôt que de l’eau pour faire un baromètre.</p></li>
-<li><p>Expliquer la définition de l’unité de pression mmHg (millimètre de mercure): <span class="math notranslate nohighlight">\(1\rm{mmHg}=133,3\rm{Pa}\)</span></p></li>
-</ol>
-</div>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Démonstration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">On retiendra de cet exercice l’utilisation du fait que la pression est la même en tout point isoaltitude.</p>
-<p class="card-text"><strong>Résolution</strong></p>
-<p class="card-text">A la surface libre en contact avec l’atmosphère règne une pression <span class="math notranslate nohighlight">\(P_0 = 1 \rm{atm} \approx 10^5 \rm{Pa}\)</span>. De l’autre côté, on assimile la pression à une pression nulle <span class="math notranslate nohighlight">\(P= 0\)</span>. Le fluide étant au repos, on peut appliquer l’équation de la statique des fluides et puisqu’on fait l’hypothèse d’un fluide incompressible, on applique l’équation barométrique (on a orienté z vers le bas et pris la profondeur nulle à la hauteur de la surface de pression nulle):</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp;P(z=h) - P(z=0) = \rho g h\\
-&amp; \Longrightarrow h = \frac{P_0}{\rho g}\\
-&amp; \Longrightarrow h_{mercure} = 760 mm\\
-&amp; \Longrightarrow h_{mercure} = 10 m
-\end{align*}\]</div>
-<p class="card-text">On observe que la taille du barométre sera beaucoup plus faible grâce sa plus forte masse volumique.</p>
-<p class="card-text">On remarquera aussi que la différence de pression correspondant à une hauteur de mercure de 1mm est 133Pa, ce qui permet de définir l’unité de pression mmHg.</p>
-</div>
-</details></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -388,16 +334,27 @@ Démonstration<div class="summary-down docutils">
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="equation_stat.html" title="previous page">Equation fondamental de la statique des fluides</a>
-    <a class='right-next' id="next-link" href="stat_gp.html" title="next page">Cas des gaz parfait: Atmopshère isotherme</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="equation_stat.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Equation fondamental de la statique des fluides</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="stat_gp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cas des gaz parfait: Atmopshère isotherme</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -413,8 +370,7 @@ Démonstration<div class="summary-down docutils">
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

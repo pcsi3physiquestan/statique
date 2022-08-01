@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forces de pression et pression &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/pression.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,7 +58,10 @@
     <link rel="next" title="Equation fondamental de la statique des fluides" href="equation_stat.html" />
     <link rel="prev" title="Préambule: Surfaces orientées" href="surface.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,13 +79,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,45 +96,69 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="surface.html">
-   Préambule: Surfaces orientées
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="equation_stat.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Forces de pression et pression
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="equation_stat.html">
-   Equation fondamental de la statique des fluides
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="incompressible.html">
-   Cas des fluides incompressibles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_gp.html">
-   Cas des gaz parfait: Atmopshère isotherme
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_resultante.html">
-   Expression de la résultante des forces de pression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_ex_app.html">
-   Exercices d’application
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stat_td.html">
-   Travaux dirigés
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stat_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -221,7 +249,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pression-et-forces-de-pression-definitions">
@@ -229,13 +257,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#remarques-sur-la-composante-tangentielle">
-   Remarques sur la composante tangentielle
+  <a class="reference internal nav-link" href="#remarques-sur-la-composante-tangentielle-en-ligne">
+   Remarques sur la composante tangentielle (en ligne)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#origine-microscopique-de-la-pression">
-   Origine microscopique de la pression
+  <a class="reference internal nav-link" href="#origine-microscopique-de-la-pression-en-ligne">
+   Origine microscopique de la pression (en ligne)
   </a>
  </li>
 </ul>
@@ -249,7 +277,7 @@
         
               <div>
                 
-  <div class="section" id="forces-de-pression-et-pression">
+  <div class="tex2jax_ignore mathjax_ignore section" id="forces-de-pression-et-pression">
 <h1>Forces de pression et pression<a class="headerlink" href="#forces-de-pression-et-pression" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pression-et-forces-de-pression-definitions">
 <h2>Pression et forces de pression: Définitions<a class="headerlink" href="#pression-et-forces-de-pression-definitions" title="Permalink to this headline">¶</a></h2>
@@ -257,78 +285,69 @@
 Dans une action de contact, on distingue au niveau des actions ponctuelles la composante normale à la surface de contact et la composante tangentielle à la surface de contact. La composante tangentielle correspond aux frottements et la composante normale aux <strong>forces de pression</strong>.</p>
 <p>Dans le cadre de l’étude de l’action d’un fluide, on va séparer l’étude de l’action tangentielle et de l’action normale.</p>
 <p>Le but de cette séquence est d’étudier les forces de pression dans le cadre de la <strong>statique des fluides</strong>, c’est-à-dire que l’on va supposer que le fluide est <strong>au repos</strong>.</p>
+<div class="sidebar">
+<p class="sidebar-title">Signe de la relation force-pression</p>
+<p>Attention, la relation précédente est donnée en orientant le vecteur surface vers l’extérieur du système qui exerce la force. Il arrive que pour des raisons de commodité ou de convention, le vecteur surface soit orienté dans l’autre sens. Il faut alors faire attention au signe dans la relation force-pression (il apparaît un signe “-“).</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Définition : Pression</strong></p>
+<p><strong>Pression</strong></p>
 <p>A l’échelle macroscopique (notre échelle), on définit la <strong>pression</strong> comme une grandeur scalaire positive correspondant à l’intensité de la force normale exercée <strong>par unité de surface</strong>.</p>
-<p>Pour une surface infinitésimale <span class="math notranslate nohighlight">\(dS\)</span>, on relie la force de pression à la pression:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6970e705-66b2-4dba-9ae0-2e3f42631066">
-<span class="eqno">(2)<a class="headerlink" href="#equation-6970e705-66b2-4dba-9ae0-2e3f42631066" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\overrightarrow{F} = P \overrightarrow{dS}
+<p>Pour une surface infinitésimale <span class="math notranslate nohighlight">\(d^2S\)</span>, on relie la force de pression à la pression:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f0d3598e-bd34-4246-8412-7edb91a7e7ea">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f0d3598e-bd34-4246-8412-7edb91a7e7ea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\overrightarrow{d^2F} = P \overrightarrow{d^2S}
 \end{equation}\]</div>
 <div class="figure align-center" id="fig-264">
 <img alt="../_images/thermo_pression_def.jpg" src="../_images/thermo_pression_def.jpg" />
 </div>
-<p>où le vecteur <span class="math notranslate nohighlight">\(\overrightarrow{dS}\)</span> est orienté vers l’extérieur du système qui <strong>exerce</strong> la force de pression.</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p><strong>Signe de la relation force-pression</strong></p>
-<p>Attention, la relation précédente est donnée en orientant le vecteur surface vers l’extérieur du système qui exerce la force. Il arrive que pour des raisons de commodité ou de convention, le vecteur surface soit orienté dans l’autre sens. Il faut alors faire attention au signe dans la relation force-pression (il apparaît un signe “-“).</p>
+<p>où le vecteur <span class="math notranslate nohighlight">\(\overrightarrow{d^2S}\)</span> est orienté vers l’extérieur du système qui <strong>exerce</strong> la force de pression.</p>
 </div>
 <p><strong>Relation force pression. Cas fini.</strong><br />
 Dans le cas d’une action globale d’un fluide sur le système mécanique étudié, la force de pression résultante s’écrit comme la somme de la force ponctuelle sur toute la surface de contact:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b649e0d8-51c4-4e4e-930e-990d3ffbf4d3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-b649e0d8-51c4-4e4e-930e-990d3ffbf4d3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\overrightarrow{F} = \iint_{M\in \Sigma_{contact}} P(M) \overrightarrow{dS}(M)
+<div class="amsmath math notranslate nohighlight" id="equation-aca5801f-c67c-4ce3-b234-d7889544b257">
+<span class="eqno">(3)<a class="headerlink" href="#equation-aca5801f-c67c-4ce3-b234-d7889544b257" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\overrightarrow{F} = \iint_{M\in \Sigma_{contact}} P(M) \overrightarrow{d^2S}(M)
 \end{equation}\]</div>
+<div class="topic">
+<p class="topic-title first">Contexte</p>
 <p>Dans ce chapitre, nous allons étudier deux aspects importants:</p>
 <ul class="simple">
 <li><p>la détermination de la pression en chaque point d’un fluide. On parlera de champ de pression. Nous verrons que l’équation principale permettant d’établir cette caractéristique est appelée <strong>équation fondamentale de la statique des fluides</strong>. Nous traiterons les cas particuliers des fluides dits incompressibles et des gaz parfaits. Comme nous le verrons en thermodynamique, la connaissance de ce champ de pression ne sert pas qu’à calculer une force de pression.</p></li>
 <li><p>Dans un second temps, nous supposerons le champ de pression dans un fluide établi et nous apprendrons à calculer la force de pression par calcul de l’intégrale donnée précédemment ou par application du théorème d’Archimède.</p></li>
 </ul>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Définition réelle de la pression</strong><br />
-Aujourd’hui, la pression est en réalité définit différemment par l’intermédiaire de grandeur thermodynamique comme l’entropie ou l’énergie interne. Nous donnerons cette définition dans le cadre du cours de thermodynamique. La définition donnée ici est comme on le verra, cohérente avec la définition actuelle.</p>
-<p class="card-text">Ces multiples définitions cohérentes (on trouvera la même multiplicité pour la température) est issu des évolutions historiques et aussi (et surtout pour nous) des différentes échelles et modes d’analyses des systèmes.</p>
 </div>
-</details></div>
-<div class="section" id="remarques-sur-la-composante-tangentielle">
-<h2>Remarques sur la composante tangentielle<a class="headerlink" href="#remarques-sur-la-composante-tangentielle" title="Permalink to this headline">¶</a></h2>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Remarque<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Composante tangentielle et fluide au repos</strong><br />
-Dans l’étude des fluides, on sépare en général en deux actions séparées la composante normale (force de pression) et la composante tangentielle (force de frottement fluides).</p>
-<p class="card-text">Ici, on étudie des fluides au repos, de sorte qu’on considèrera que la force de frottements fluides est nulle (on rappelle qu’elle est proportionnelle à la vitesse relative du système par rapport au fluide).</p>
-<p class="card-text">Dans le cas de mouvements faibles du système subissant l’action du fluide, on sera amené réintroduire une force de frottements fluides tout en considérant que l’action normale du fluide sur le système est assimilable à celle du fluide au repos. C’est une approximation plus ou moins valable suivant les cas mais nous ne discuterons pas de sa validité dans le cadre du programme.</p>
 </div>
-</details></div>
-<div class="section" id="origine-microscopique-de-la-pression">
-<h2>Origine microscopique de la pression<a class="headerlink" href="#origine-microscopique-de-la-pression" title="Permalink to this headline">¶</a></h2>
-<p><strong>Origine microscopique</strong><br />
-A l’échelle microscopique, on peut traduire la pression comme un <strong>flux</strong> de quantité de mouvement à travers la surface dS, c’est-à-dire un échange, par unité de temps de quantité de mouvement perpendiculairement à la surface et par unité de surface (l’échange de quantité de mouvement tangentiel correspond à la composante…  tangentielle).</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Exemple : Pression sur une paroi</p>
-<p>Le cas de la pression sur une paroi est le cas le plus utile pour nous. Lorsque les particules du fluide arrivent sur la paroi, elles ont une vitesse <span class="math notranslate nohighlight">\(\overrightarrow{v} = V_{\perp,1}\overrightarrow{e_{\perp}} + V_{//,1} \overrightarrow{e_{//}}\)</span> où les symboles <span class="math notranslate nohighlight">\(\perp\)</span> et <span class="math notranslate nohighlight">\(//\)</span> traduisent les composantes de vitesse parallèles et perpendiculaires à la paroi. Si <span class="math notranslate nohighlight">\(\overrightarrow{e_{\perp}}\)</span> est dirigé du fluide vers la paroi, alors <span class="math notranslate nohighlight">\(V_{\perp,1}\)</span> est nécessairement positive sinon la particule ne heurterait pas la paroi.</p>
+<div class="section" id="remarques-sur-la-composante-tangentielle-en-ligne">
+<h2>Remarques sur la composante tangentielle (en ligne)<a class="headerlink" href="#remarques-sur-la-composante-tangentielle-en-ligne" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Composante tangentielle et fluide au repos</p>
+<p>Dans l’étude des fluides, on sépare en général en deux actions séparées la composante normale (force de pression) et la composante tangentielle (force de frottement fluides).</p>
+<p>Ici, on étudie des fluides au repos, de sorte qu’on considèrera que la force de frottements fluides est nulle (on rappelle qu’elle est proportionnelle à la vitesse relative du système par rapport au fluide).</p>
+<p>Dans le cas de mouvements faibles du système subissant l’action du fluide, on sera amené réintroduire une force de frottements fluides tout en considérant que l’action normale du fluide sur le système est assimilable à celle du fluide au repos. C’est une approximation plus ou moins valable suivant les cas mais nous ne discuterons pas de sa validité dans le cadre du programme.</p>
+</div>
+</div>
+<div class="section" id="origine-microscopique-de-la-pression-en-ligne">
+<h2>Origine microscopique de la pression (en ligne)<a class="headerlink" href="#origine-microscopique-de-la-pression-en-ligne" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Origine microscopique</p>
+<p>A l’échelle microscopique, on peut traduire la pression comme un <strong>flux</strong> de quantité de mouvement à travers la surface dS, c’est-à-dire un échange, par unité de temps de quantité de mouvement perpendiculairement à la surface et par unité de surface (l’échange de quantité de mouvement tangentiel correspond à la composante…  tangentielle).</p>
+<ul class="simple">
+<li><p>Exemple : Pression sur une paroi</p></li>
+</ul>
+<blockquote>
+<div><p>Le cas de la pression sur une paroi est le cas le plus utile pour nous. Lorsque les particules du fluide arrivent sur la paroi, elles ont une vitesse <span class="math notranslate nohighlight">\(\overrightarrow{v} = V_{\perp,1}\overrightarrow{e_{\perp}} + V_{//,1} \overrightarrow{e_{//}}\)</span> où les symboles <span class="math notranslate nohighlight">\(\perp\)</span> et <span class="math notranslate nohighlight">\(//\)</span> traduisent les composantes de vitesse parallèles et perpendiculaires à la paroi. Si <span class="math notranslate nohighlight">\(\overrightarrow{e_{\perp}}\)</span> est dirigé du fluide vers la paroi, alors <span class="math notranslate nohighlight">\(V_{\perp,1}\)</span> est nécessairement positive sinon la particule ne heurterait pas la paroi.</p>
 <p>Après avoir “rebondi” sur la paroi, la particule possède une vitesse <span class="math notranslate nohighlight">\(\overrightarrow{v} = V_{\perp,2}\overrightarrow{e_{\perp}} + V_{//,2} \overrightarrow{e_{//}}\)</span> avec <span class="math notranslate nohighlight">\(V_{\perp,2}\)</span> négatif.</p>
 <p>La quantité de mouvement transférée par la particule perpendiculairement à la surface est alors <span class="math notranslate nohighlight">\(\overrightarrow{\Delta p} \cdot \overrightarrow{e_{\perp}}= m (v_{\perp,2} - v_{\perp,1})\)</span>. En la ramenant par unité de temps, on trouve bien une force. Il reste encore à faire une étude statistique de l’ensemble des particules qui viennent heurter la paroi pendant un temps dt pour remonter à un calcul de pression. On parle de <strong>pression cinétique</strong>.</p>
 <p>Un tel calcul sera réalisé en cours de thermodynamique. A l’heure actuelle, l’origine microscopique de la pression sera affirmé sans être utilisé.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Exemple : Pression interne d’un fluide</p>
-<p>Cette appréciation de la pression est moins utile à connaître en première année. Lorsqu’on étudie un fluide, on peut parler de la pression en un point du fluide même s’il n’est pas en contact avec la paroi. Il s’agit alors du transfert de quantité de mouvement par unité de temps et de surface entre une petite portion du fluide (on parlera de particule de fluide, cf. suite) et le reste du fluide.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Exemple : Pression interne d’un fluide</p></li>
+</ul>
+<blockquote>
+<div><p>Cette appréciation de la pression est moins utile à connaître en première année. Lorsqu’on étudie un fluide, on peut parler de la pression en un point du fluide même s’il n’est pas en contact avec la paroi. Il s’agit alors du transfert de quantité de mouvement par unité de temps et de surface entre une petite portion du fluide (on parlera de particule de fluide, cf. suite) et le reste du fluide.</p>
 <p>Cette fois, il y a très peu de “choc” qui se produisent exactement à la surface de la portion de fluide (théoriquement, ce nombre est nul !). Le transfert de quantité de mouvement se fait alors par transfert de matière car le système est alors ouvert.</p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -356,16 +375,27 @@ A l’échelle microscopique, on peut traduire la pression comme un <strong>flux
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="surface.html" title="previous page">Préambule: Surfaces orientées</a>
-    <a class='right-next' id="next-link" href="equation_stat.html" title="next page">Equation fondamental de la statique des fluides</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="surface.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Préambule: Surfaces orientées</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="equation_stat.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Equation fondamental de la statique des fluides</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -381,8 +411,7 @@ A l’échelle microscopique, on peut traduire la pression comme un <strong>flux
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
