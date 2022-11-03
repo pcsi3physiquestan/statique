@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Méthodes &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_methode.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,10 +58,7 @@
     <link rel="next" title="Exercices d’application" href="statique_ex_app.html" />
     <link rel="prev" title="S’entrainer" href="statique_ex.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -79,14 +76,13 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
-      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -254,7 +250,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fluides-incompressibles">
@@ -287,12 +283,12 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="methodes">
+  <div class="section" id="methodes">
 <h1>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fluides-incompressibles">
 <h2>Fluides incompressibles<a class="headerlink" href="#fluides-incompressibles" title="Permalink to this headline">¶</a></h2>
 <div class="attention admonition">
-<p class="admonition-title">Validité du modèle incompressible </p>
+<p class="admonition-title">Validité du modèle incompressible</p>
 <p>Dans le cas de l’eau, on peut donner le coefficient de compressibilité isotherme:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -307,7 +303,7 @@
 </ol>
 </div>
 <div class="topic">
-<p class="topic-title first">Correction</p>
+<p class="topic-title">Correction</p>
 <p><em>Rappel : La masse volumique de l’eau (à connaître) est <span class="math notranslate nohighlight">\(\rho_0 = 10^3 \rm{kg.m^{_3}}\)</span>.</em></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -334,7 +330,7 @@
 </ol>
 </div>
 <div class="topic">
-<p class="topic-title first">Correction</p>
+<p class="topic-title">Correction</p>
 <p>On retiendra de cet exercice l’utilisation du fait que la pression est la même en tout point isoaltitude.</p>
 <p><strong>Résolution</strong></p>
 <p>A la surface libre en contact avec l’atmosphère règne une pression <span class="math notranslate nohighlight">\(P_0 = 1 \rm{atm} \approx 10^5 \rm{Pa}\)</span>. De l’autre côté, on assimile la pression à une pression nulle <span class="math notranslate nohighlight">\(P= 0\)</span>. Le fluide étant au repos, on peut appliquer l’équation de la statique des fluides et puisqu’on fait l’hypothèse d’un fluide incompressible, on applique l’équation barométrique (on a orienté z vers le bas et pris la profondeur nulle à la hauteur de la surface de pression nulle):</p>
@@ -352,7 +348,7 @@
 <div class="section" id="gaz-parfait">
 <h2>Gaz parfait<a class="headerlink" href="#gaz-parfait" title="Permalink to this headline">¶</a></h2>
 <div class="attention admonition">
-<p class="admonition-title">Ordres de grandeurs </p>
+<p class="admonition-title">Ordres de grandeurs</p>
 <p>On considère une atmosphère isotherme d’un gaz parfait.</p>
 <ol class="simple">
 <li><p>Donner une expression d’une altitude caractéristique H qui gouverne l’échelle sur laquelle la pression varie notablement.</p></li>
@@ -365,7 +361,7 @@
 </div>
 </div>
 <div class="topic">
-<p class="topic-title first">Démonstration</p>
+<p class="topic-title">Démonstration</p>
 <ul class="simple">
 <li><p><strong>Altitude caractéristique</strong><br />
 On observe que la pression décroit suivant une exponentielle décroissante. On va considérer que la pression a varier sur quelques H où H est la hauteur caractéristique associées à l’exponentielle, soit <span class="math notranslate nohighlight">\(H = \frac{RT}{Mg}\)</span>.</p></li>
@@ -388,7 +384,7 @@ On observe que le profil de mass volumique semble être cohérent mais les valeu
 <p>On donne: <span class="math notranslate nohighlight">\(\rho_{glace} = 0,9 \rho_{eau}\)</span> et <span class="math notranslate nohighlight">\(\rho_{air} \ll \rho_{glace}\)</span>.</p>
 </div>
 <div class="topic">
-<p class="topic-title first">Démonstration</p>
+<p class="topic-title">Démonstration</p>
 <p>Notons <span class="math notranslate nohighlight">\(V_i\)</span> le volume immergé dans l’eau et <span class="math notranslate nohighlight">\(V_e\)</span> le voume émergé (donc immergé dans l’air). Les forces qui s’appliquent sur l’iceberg sont (on a pris un axe Oz vertical vers le haut):</p>
 <ul class="simple">
 <li><p>son poids: <span class="math notranslate nohighlight">\(\overrightarrow{P} = - \rho_{glace} (V_i + V_e) g \overrightarrow{e_z}\)</span></p></li>
@@ -403,7 +399,7 @@ On observe que le profil de mass volumique semble être cohérent mais les valeu
 \end{align*}\]</div>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Ballon ascensionnel </p>
+<p class="admonition-title">Ballon ascensionnel</p>
 <p>On s’intéresse à un ballon de volume V constant gonflé avec un gaz plus léger que l’air atmosphérique. Dans ce modèle, nous supposerons que le volume V est suffisamment petit pour qu’on puisse considérer que la masse volumique de l’air qui entoure le ballon est constante. On la note: <span class="math notranslate nohighlight">\(\rho_{air}\)</span> On note m la masse totale du ballon et (<span class="math notranslate nohighlight">\(\rho\)</span> sa masse volumique moyenne, c’est-à-dire que  <span class="math notranslate nohighlight">\(\rho = \frac{m}{V}\)</span>, il faut compter dans m la masse du gaz ET de l’enceinte).</p>
 <ol class="simple">
 <li><p>Etablir l’équation différentielle du mouvement du ballon en supposant le théorème d’Archimède applicable.</p></li>
@@ -412,7 +408,7 @@ On observe que le profil de mass volumique semble être cohérent mais les valeu
 </ol>
 </div>
 <div class="topic">
-<p class="topic-title first">Réponses</p>
+<p class="topic-title">Réponses</p>
 <ol class="simple">
 <li><p>On est dans le cas où l’on assimile le champ de l’air à celui qu’il aurait au repos ce qui permet d’appliquer le théorème d’Archimède.</p></li>
 </ol>
@@ -434,7 +430,7 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
 <p>On considère un barrage assimilable à un demi-cylindre de hauteur H et de rayon R. L’eau est retenue à “l’intérieur” du demi-cylindre. Calculer la résultante des forces de pression exercée sur le barrage. On prendra l’origine des <strong>profondeur</strong> z à la surface de l’eau où l’atmosphère supérieur y impose une pression <span class="math notranslate nohighlight">\(P_0\)</span>. Faire l’application numérique pour un barrage de 10m de haut de rayon 30m.</p>
 </div>
 <div class="topic">
-<p class="topic-title first">Démonstration</p>
+<p class="topic-title">Démonstration</p>
 <ul class="simple">
 <li><p><strong>Choix du système de coordonnées</strong></p></li>
 </ul>
@@ -500,27 +496,16 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
               </div>
               
         
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="statique_ex.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">S’entrainer</p>
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="statique_ex.html" title="previous page">S’entrainer</a>
+    <a class='right-next' id="next-link" href="statique_ex_app.html" title="next page">Exercices d’application</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="statique_ex_app.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercices d’application</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
         
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
@@ -536,7 +521,8 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

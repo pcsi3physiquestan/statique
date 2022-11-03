@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cas des gaz parfait: Atmopshère isotherme &#8212; Statique des fluides</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,26 +31,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_gp.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -58,10 +58,7 @@
     <link rel="next" title="Expression de la résultante des forces de pression" href="statique_resultante.html" />
     <link rel="prev" title="Cas des fluides incompressibles" href="statique_incompressible.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -79,14 +76,13 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
-      
       <h1 class="site-logo" id="site-title">Statique des fluides</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -254,7 +250,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#champ-de-pression-pour-un-atmosphere-isotherme-d-un-gaz-parfait">
@@ -277,7 +273,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cas-des-gaz-parfait-atmopshere-isotherme">
+  <div class="section" id="cas-des-gaz-parfait-atmopshere-isotherme">
 <h1>Cas des gaz parfait: Atmopshère isotherme<a class="headerlink" href="#cas-des-gaz-parfait-atmopshere-isotherme" title="Permalink to this headline">¶</a></h1>
 <p><em>On va maintenant supposer que le fluide est un gaz parfait. On va donc pouvoir utiliser l’équation d’état des gaz parfaits pour relier la masse volumique et la pression. Le problème est qu’on fait apparaître la température qui peut aussi varier dans l’espace. On va donc devoir faire une hypothèse sur la température. Dans le cadre du cours, on suppose pour faire simple que l’atmosphère est isotherme, c’est-à-dire que la température est uniforme. On reviendra sur cette hypothèse par la suite.</em></p>
 <div class="section" id="champ-de-pression-pour-un-atmosphere-isotherme-d-un-gaz-parfait">
@@ -325,7 +321,7 @@ P(z) &amp;= P(z=0) e^{-\frac{M_P gz}{k_B T}}
 <div class="section" id="facteur-de-boltzmann">
 <h2>Facteur de Boltzmann<a class="headerlink" href="#facteur-de-boltzmann" title="Permalink to this headline">¶</a></h2>
 <div class="topic">
-<p class="topic-title first">Profil de concentration</p>
+<p class="topic-title">Profil de concentration</p>
 <p>En utilisant les différentes relations établies précédemment, on observe que le nombre de particule par unité de volume située à une altitude z est:  <span class="math notranslate nohighlight">\(n(z) = n_0 \exp(-\frac{M_p gz}{k_B T})\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(n(z)\)</span> représente donc la statistiques des particules en fonction de l’altitude mais on peut aussi le comprendre comme <strong>la statistique  des particules en fonction de leur énergie potentielle (ici de pesanteur).</strong></p>
 <p><strong>Analyse de la statistique des particules</strong><br />
@@ -377,27 +373,16 @@ n(E_p) = A \exp(-\frac{E_p}{k_B T})
               </div>
               
         
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="statique_incompressible.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cas des fluides incompressibles</p>
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="statique_incompressible.html" title="previous page">Cas des fluides incompressibles</a>
+    <a class='right-next' id="next-link" href="statique_resultante.html" title="next page">Expression de la résultante des forces de pression</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="statique_resultante.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Expression de la résultante des forces de pression</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
         
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
@@ -413,7 +398,8 @@ n(E_p) = A \exp(-\frac{E_p}{k_B T})
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>
