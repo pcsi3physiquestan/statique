@@ -69,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Approches numériques" href="statique_num.html" />
     <link rel="prev" title="Exercices d’application" href="statique_ex_app.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="statique_methode.html">Méthodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statique_ex_app.html">Exercices d’application</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Travaux dirigés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statique_num.html">Approches numériques</a></li>
 </ul>
 </li>
 </ul>
@@ -440,63 +442,63 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_4dc05">
+<table id="T_e3e84">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_4dc05_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
-      <th id="T_4dc05_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
-      <th id="T_4dc05_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
+      <th id="T_e3e84_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
+      <th id="T_e3e84_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
+      <th id="T_e3e84_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_4dc05_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_4dc05_row0_col0" class="data row0 col0" >Troposphère</td>
-      <td id="T_4dc05_row0_col1" class="data row0 col1" >0</td>
-      <td id="T_4dc05_row0_col2" class="data row0 col2" >-6.5</td>
+      <th id="T_e3e84_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e3e84_row0_col0" class="data row0 col0" >Troposphère</td>
+      <td id="T_e3e84_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_e3e84_row0_col2" class="data row0 col2" >-6.5</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_4dc05_row1_col0" class="data row1 col0" >Tropopause</td>
-      <td id="T_4dc05_row1_col1" class="data row1 col1" >11</td>
-      <td id="T_4dc05_row1_col2" class="data row1 col2" >0</td>
+      <th id="T_e3e84_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e3e84_row1_col0" class="data row1 col0" >Tropopause</td>
+      <td id="T_e3e84_row1_col1" class="data row1 col1" >11</td>
+      <td id="T_e3e84_row1_col2" class="data row1 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_4dc05_row2_col0" class="data row2 col0" >Stratosphère</td>
-      <td id="T_4dc05_row2_col1" class="data row2 col1" >20</td>
-      <td id="T_4dc05_row2_col2" class="data row2 col2" >1.0</td>
+      <th id="T_e3e84_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e3e84_row2_col0" class="data row2 col0" >Stratosphère</td>
+      <td id="T_e3e84_row2_col1" class="data row2 col1" >20</td>
+      <td id="T_e3e84_row2_col2" class="data row2 col2" >1.0</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_4dc05_row3_col0" class="data row3 col0" >Stratosphère</td>
-      <td id="T_4dc05_row3_col1" class="data row3 col1" >32</td>
-      <td id="T_4dc05_row3_col2" class="data row3 col2" >2.8</td>
+      <th id="T_e3e84_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e3e84_row3_col0" class="data row3 col0" >Stratosphère</td>
+      <td id="T_e3e84_row3_col1" class="data row3 col1" >32</td>
+      <td id="T_e3e84_row3_col2" class="data row3 col2" >2.8</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_4dc05_row4_col0" class="data row4 col0" >Stratopause</td>
-      <td id="T_4dc05_row4_col1" class="data row4 col1" >47</td>
-      <td id="T_4dc05_row4_col2" class="data row4 col2" >0</td>
+      <th id="T_e3e84_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_e3e84_row4_col0" class="data row4 col0" >Stratopause</td>
+      <td id="T_e3e84_row4_col1" class="data row4 col1" >47</td>
+      <td id="T_e3e84_row4_col2" class="data row4 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_4dc05_row5_col0" class="data row5 col0" >Mesosphère</td>
-      <td id="T_4dc05_row5_col1" class="data row5 col1" >51</td>
-      <td id="T_4dc05_row5_col2" class="data row5 col2" >-2.8</td>
+      <th id="T_e3e84_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_e3e84_row5_col0" class="data row5 col0" >Mesosphère</td>
+      <td id="T_e3e84_row5_col1" class="data row5 col1" >51</td>
+      <td id="T_e3e84_row5_col2" class="data row5 col2" >-2.8</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_4dc05_row6_col0" class="data row6 col0" >Mesosphère</td>
-      <td id="T_4dc05_row6_col1" class="data row6 col1" >71</td>
-      <td id="T_4dc05_row6_col2" class="data row6 col2" >-2.0</td>
+      <th id="T_e3e84_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_e3e84_row6_col0" class="data row6 col0" >Mesosphère</td>
+      <td id="T_e3e84_row6_col1" class="data row6 col1" >71</td>
+      <td id="T_e3e84_row6_col2" class="data row6 col2" >-2.0</td>
     </tr>
     <tr>
-      <th id="T_4dc05_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_4dc05_row7_col0" class="data row7 col0" >Mesopause</td>
-      <td id="T_4dc05_row7_col1" class="data row7 col1" >85</td>
-      <td id="T_4dc05_row7_col2" class="data row7 col2" >NA</td>
+      <th id="T_e3e84_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_e3e84_row7_col0" class="data row7 col0" >Mesopause</td>
+      <td id="T_e3e84_row7_col1" class="data row7 col1" >85</td>
+      <td id="T_e3e84_row7_col2" class="data row7 col2" >NA</td>
     </tr>
   </tbody>
 </table>
@@ -512,8 +514,8 @@ P_{sol} &amp;= 1.013 \times 10^5 Pa
 \end{split}\]</div>
 <p>On utilisera les données obtenues pour étudier les  mouvements d’un ballon sonde.</p>
 <p><strong>Données numériques.</strong> On prend :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bf81c9b-9ecf-43fb-a9fb-50774007b620">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7bf81c9b-9ecf-43fb-a9fb-50774007b620" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e06f74c3-df72-4fc7-b1bb-6474f3b62cf5">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e06f74c3-df72-4fc7-b1bb-6474f3b62cf5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \textrm{Accélération de la pesanteur} &amp;:&amp; g = 9.81 m.s^{-2}\\
 \textrm{Masse molaire de l'air} &amp;:&amp; M_{air} = 29 g.mol^{-1}\\
 \textrm{Constante des gaz parfaits} &amp;:&amp; R = 8.314 J.K^{-1}.mol^{-1}
@@ -616,6 +618,15 @@ Vous devrez :</p></li>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Exercices d’application</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="statique_num.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Approches numériques</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
