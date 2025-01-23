@@ -329,7 +329,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barometre-differentiel">Baromètre différentiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bateau">Bateau</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bille-au-fond-d-un-evier">Bille au fond d’un évier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ouverture-d-un-clapet">Ouverture d’un clapet.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bille-au-fond-d-un-evier-plus-difficile">Bille au fond d’un évier (Plus difficile)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerique-etude-de-l-atmosphere-terrestre">Numérique : Etude de l’atmosphère terrestre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">Modélisation de l’atmosphère</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mise-en-equation">Mise en équation</a></li>
@@ -377,7 +378,11 @@ document.write(`
 <h2>Bateau<a class="headerlink" href="#bateau" title="Permalink to this heading">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Exercice</p>
-<p>On considère un bateau modélisé pour simplifié par un cylindre de hauteur H et de rayon R, l’axe du cylindre étant horizontal. Le bateau et sa cargaison possèdre une masse <span class="math notranslate nohighlight">\(m\)</span> et il flotte à la surface de l’eau. Déterminer de deux manières différentes une relation que doit vérifier la hauteur <span class="math notranslate nohighlight">\(z_0\)</span> du bateau qui reste immergé <em>(Facultatif : on pourra essayer de la résoudre numériquement par dichotomie en choisissant des ordre de grandeur pour un bateau).</em></p>
+<p>On considère un bateau modélisé pour simplifié par un cylindre de hauteur H et de rayon R, l’axe du cylindre étant horizontal. Le bateau et sa cargaison possèdre une masse <span class="math notranslate nohighlight">\(m\)</span> et il flotte à la surface de l’eau.</p>
+<ol class="arabic simple">
+<li><p>Déterminer de deux manières différentes une relation que doit vérifier la hauteur <span class="math notranslate nohighlight">\(z_0\)</span> du bateau qui reste immergé. Réfléchir aux hypothèses nécessaires pour assurer la cohérence entre les deux méthodes.</p></li>
+<li><p><em>Facultatif : on pourra essayer de la résoudre numériquement par dichotomie en choisissant des ordre de grandeur pour un bateau.</em></p></li>
+</ol>
 </div>
 <p><em>Point utile pour cet exercice</em></p>
 <ul class="simple">
@@ -386,8 +391,14 @@ document.write(`
 <li><p><em><span class="math notranslate nohighlight">\(\Longrightarrow\)</span> Liquide peu compressible.</em></p></li>
 </ul>
 </section>
-<section id="bille-au-fond-d-un-evier">
-<h2>Bille au fond d’un évier<a class="headerlink" href="#bille-au-fond-d-un-evier" title="Permalink to this heading">#</a></h2>
+<section id="ouverture-d-un-clapet">
+<h2>Ouverture d’un clapet.<a class="headerlink" href="#ouverture-d-un-clapet" title="Permalink to this heading">#</a></h2>
+<p>Un clapet est constitué d’une plaque verticale de longueur <span class="math notranslate nohighlight">\(L\)</span> (selon l’horizontale) et de hauteur <span class="math notranslate nohighlight">\(H\)</span> maintenu en liaison pivot avec un bati à son extrémité supérieure (l’axe de la liaison est horizontal suivant la longueur <span class="math notranslate nohighlight">\(L\)</span> de la plaque). Sa masse <span class="math notranslate nohighlight">\(m\)</span> est uniformément répartie et elle touche le sol situé  à une distance <span class="math notranslate nohighlight">\(L\)</span> en dessous du pivot. Le contact avec le sol est parfait, par contre le pivot ne l’est pas et le moment de la liaison sur son axe de rotation est supposé constant <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
+<p>A gauche de la plaque il y a de l’air à une pression <span class="math notranslate nohighlight">\(P_0\)</span> et à droite un bassin rempli d’eau sur une hauteur <span class="math notranslate nohighlight">\(H_0 \leq H\)</span>. L’eau est au repos et supposé peu compressible de masse volumique <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<p>A quelle condition sur <span class="math notranslate nohighlight">\(\Gamma\)</span>, le clapet maintient le bassin rempli avant de s’ouvir à une hauteur d’eau <span class="math notranslate nohighlight">\(H_0 = H/2\)</span>?</p>
+</section>
+<section id="bille-au-fond-d-un-evier-plus-difficile">
+<h2>Bille au fond d’un évier (Plus difficile)<a class="headerlink" href="#bille-au-fond-d-un-evier-plus-difficile" title="Permalink to this heading">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Exercice</p>
 <p>Une sphère de bois de masse volumique <span class="math notranslate nohighlight">\(\rho\)</span> et de rayon R, de masse uniformément répartie est complètement immergée dans un bassin d’eau (de masse volumique <span class="math notranslate nohighlight">\(\rho_e\)</span>) de profondeur <span class="math notranslate nohighlight">\(H\)</span> de telle manière qu’elle bouche un trou circulaire de rayon <span class="math notranslate nohighlight">\(r\)</span>.</p>
@@ -442,63 +453,63 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_e3e84">
+<table id="T_349ed">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e3e84_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
-      <th id="T_e3e84_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
-      <th id="T_e3e84_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
+      <th id="T_349ed_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
+      <th id="T_349ed_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
+      <th id="T_349ed_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e3e84_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_e3e84_row0_col0" class="data row0 col0" >Troposphère</td>
-      <td id="T_e3e84_row0_col1" class="data row0 col1" >0</td>
-      <td id="T_e3e84_row0_col2" class="data row0 col2" >-6.5</td>
+      <th id="T_349ed_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_349ed_row0_col0" class="data row0 col0" >Troposphère</td>
+      <td id="T_349ed_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_349ed_row0_col2" class="data row0 col2" >-6.5</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_e3e84_row1_col0" class="data row1 col0" >Tropopause</td>
-      <td id="T_e3e84_row1_col1" class="data row1 col1" >11</td>
-      <td id="T_e3e84_row1_col2" class="data row1 col2" >0</td>
+      <th id="T_349ed_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_349ed_row1_col0" class="data row1 col0" >Tropopause</td>
+      <td id="T_349ed_row1_col1" class="data row1 col1" >11</td>
+      <td id="T_349ed_row1_col2" class="data row1 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_e3e84_row2_col0" class="data row2 col0" >Stratosphère</td>
-      <td id="T_e3e84_row2_col1" class="data row2 col1" >20</td>
-      <td id="T_e3e84_row2_col2" class="data row2 col2" >1.0</td>
+      <th id="T_349ed_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_349ed_row2_col0" class="data row2 col0" >Stratosphère</td>
+      <td id="T_349ed_row2_col1" class="data row2 col1" >20</td>
+      <td id="T_349ed_row2_col2" class="data row2 col2" >1.0</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_e3e84_row3_col0" class="data row3 col0" >Stratosphère</td>
-      <td id="T_e3e84_row3_col1" class="data row3 col1" >32</td>
-      <td id="T_e3e84_row3_col2" class="data row3 col2" >2.8</td>
+      <th id="T_349ed_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_349ed_row3_col0" class="data row3 col0" >Stratosphère</td>
+      <td id="T_349ed_row3_col1" class="data row3 col1" >32</td>
+      <td id="T_349ed_row3_col2" class="data row3 col2" >2.8</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_e3e84_row4_col0" class="data row4 col0" >Stratopause</td>
-      <td id="T_e3e84_row4_col1" class="data row4 col1" >47</td>
-      <td id="T_e3e84_row4_col2" class="data row4 col2" >0</td>
+      <th id="T_349ed_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_349ed_row4_col0" class="data row4 col0" >Stratopause</td>
+      <td id="T_349ed_row4_col1" class="data row4 col1" >47</td>
+      <td id="T_349ed_row4_col2" class="data row4 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_e3e84_row5_col0" class="data row5 col0" >Mesosphère</td>
-      <td id="T_e3e84_row5_col1" class="data row5 col1" >51</td>
-      <td id="T_e3e84_row5_col2" class="data row5 col2" >-2.8</td>
+      <th id="T_349ed_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_349ed_row5_col0" class="data row5 col0" >Mesosphère</td>
+      <td id="T_349ed_row5_col1" class="data row5 col1" >51</td>
+      <td id="T_349ed_row5_col2" class="data row5 col2" >-2.8</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_e3e84_row6_col0" class="data row6 col0" >Mesosphère</td>
-      <td id="T_e3e84_row6_col1" class="data row6 col1" >71</td>
-      <td id="T_e3e84_row6_col2" class="data row6 col2" >-2.0</td>
+      <th id="T_349ed_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_349ed_row6_col0" class="data row6 col0" >Mesosphère</td>
+      <td id="T_349ed_row6_col1" class="data row6 col1" >71</td>
+      <td id="T_349ed_row6_col2" class="data row6 col2" >-2.0</td>
     </tr>
     <tr>
-      <th id="T_e3e84_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_e3e84_row7_col0" class="data row7 col0" >Mesopause</td>
-      <td id="T_e3e84_row7_col1" class="data row7 col1" >85</td>
-      <td id="T_e3e84_row7_col2" class="data row7 col2" >NA</td>
+      <th id="T_349ed_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_349ed_row7_col0" class="data row7 col0" >Mesopause</td>
+      <td id="T_349ed_row7_col1" class="data row7 col1" >85</td>
+      <td id="T_349ed_row7_col2" class="data row7 col2" >NA</td>
     </tr>
   </tbody>
 </table>
@@ -514,8 +525,8 @@ P_{sol} &amp;= 1.013 \times 10^5 Pa
 \end{split}\]</div>
 <p>On utilisera les données obtenues pour étudier les  mouvements d’un ballon sonde.</p>
 <p><strong>Données numériques.</strong> On prend :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e06f74c3-df72-4fc7-b1bb-6474f3b62cf5">
-<span class="eqno">(2)<a class="headerlink" href="#equation-e06f74c3-df72-4fc7-b1bb-6474f3b62cf5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c2e7892-eab4-4012-a80d-37b441503b70">
+<span class="eqno">(2)<a class="headerlink" href="#equation-4c2e7892-eab4-4012-a80d-37b441503b70" title="Permalink to this equation">#</a></span>\[\begin{align}
 \textrm{Accélération de la pesanteur} &amp;:&amp; g = 9.81 m.s^{-2}\\
 \textrm{Masse molaire de l'air} &amp;:&amp; M_{air} = 29 g.mol^{-1}\\
 \textrm{Constante des gaz parfaits} &amp;:&amp; R = 8.314 J.K^{-1}.mol^{-1}
@@ -645,7 +656,8 @@ Vous devrez :</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barometre-differentiel">Baromètre différentiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bateau">Bateau</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bille-au-fond-d-un-evier">Bille au fond d’un évier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ouverture-d-un-clapet">Ouverture d’un clapet.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bille-au-fond-d-un-evier-plus-difficile">Bille au fond d’un évier (Plus difficile)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerique-etude-de-l-atmosphere-terrestre">Numérique : Etude de l’atmosphère terrestre</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">Modélisation de l’atmosphère</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mise-en-equation">Mise en équation</a></li>
