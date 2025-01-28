@@ -1,60 +1,47 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Méthodes &#8212; Statique des fluides</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -64,98 +51,58 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebook/statique_methode';</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_methode.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exercices d’application" href="statique_ex_app.html" />
     <link rel="prev" title="S’entrainer" href="statique_ex.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    
 
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../statique.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Statique des fluides</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      
+      <h1 class="site-logo" id="site-title">Statique des fluides</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -165,190 +112,334 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="statique_contxt.html">Comprendre le contexte</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="statique_surface.html">Préambule: Surfaces orientées</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_pression.html">Forces de pression et pression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_equation.html">Equation fondamental de la statique des fluides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_incompressible.html">Cas des fluides incompressibles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_gp.html">Cas des gaz parfait: Atmopshère isotherme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_resultante.html">Expression de la résultante des forces de pression</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="statique_ex.html">S’entrainer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Méthodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_ex_app.html">Exercices d’application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_td.html">Travaux dirigés</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_num.html">Approches numériques</a></li>
-</ul>
-</li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_equation.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Méthodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_num.html">
+     Approches numériques
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/notebook/statique_methode.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
+          
 
 
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_methode.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebook/statique_methode.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Méthodes</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluides-incompressibles">Fluides incompressibles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaz-parfait">Gaz parfait</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme-d-archimede">Théorème d’Archimède</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-de-force-de-pression">Calcul de force de pression</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/notebook/statique_methode.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluides-incompressibles">
+   Fluides incompressibles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaz-parfait">
+   Gaz parfait
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theoreme-d-archimede">
+   Théorème d’Archimède
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-force-de-pression">
+   Calcul de force de pression
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Méthodes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluides-incompressibles">
+   Fluides incompressibles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaz-parfait">
+   Gaz parfait
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theoreme-d-archimede">
+   Théorème d’Archimède
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-force-de-pression">
+   Calcul de force de pression
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="methodes">
-<h1>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this heading">#</a></h1>
-<figure class="align-center" id="qr-statique-methodes">
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="methodes">
+<h1>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">#</a></h1>
+<div class="figure align-center" id="qr-statique-methodes">
 <a class="reference external image-reference" href="statique_methode.html"><img alt="../_images/qr_statique_methodes.png" src="../_images/qr_statique_methodes.png" style="width: 150px;" /></a>
-</figure>
-<section id="fluides-incompressibles">
-<h2>Fluides incompressibles<a class="headerlink" href="#fluides-incompressibles" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="fluides-incompressibles">
+<h2>Fluides incompressibles<a class="headerlink" href="#fluides-incompressibles" title="Permalink to this headline">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Validité du modèle incompressible </p>
 <p>Dans le cas de l’eau, on peut donner le coefficient de compressibilité isotherme:</p>
@@ -357,14 +448,14 @@ document.write(`
 \chi_{T} = \frac{1}{\rho}\left(\frac{\partial \rho}{\partial P}\right)_{T} = 5 \times 10^{-10} \rm{Pa^{-1}}
 \]</div>
 <p>où l’indice T signifie que la température est maintenue constante.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Rappeler la valeur numérique de la masse volumique de l’eau</p></li>
 <li><p>Déduire du coefficient <span class="math notranslate nohighlight">\(\chi_T\)</span> une relation entre la variation <span class="math notranslate nohighlight">\(d\rho\)</span> et la variation <span class="math notranslate nohighlight">\(dP\)</span>.</p></li>
 <li><p>En déduire une estimation de la variation relative <span class="math notranslate nohighlight">\(\frac{\Delta \rho}{\rho_0}\)</span> pour une variation d’altitude <span class="math notranslate nohighlight">\(\Delta z\)</span> en considérant que le champ de pression suit le modèle d’un fluide incompressible.</p></li>
 <li><p>Estimer la variation d’altitude nécessaire pour observer une variation de 1% de la masse volumique. Commenter l’hyptohèse de fluide incompressible dans le cas de l’eau.</p></li>
 </ol>
 </div>
-<aside class="topic">
+<div class="topic">
 <p class="topic-title">Correction</p>
 <p><em>Rappel : La masse volumique de l’eau (à connaître) est <span class="math notranslate nohighlight">\(\rho_0 = 10^3 \rm{kg.m^{_3}}\)</span>.</em></p>
 <div class="amsmath math notranslate nohighlight">
@@ -381,17 +472,17 @@ document.write(`
 <p>Dans ce calcul, on a remplacer la dérivée partielle par une dérivée droite en supposant que la température était uniforme, donc la masse volumique ne peut plus dépendre que de P. On linéarise ensuite l’exponentielle en considérant que son argument est faible (validé puisqu’on veut une variation de 1%</p>
 <p>La profondeur nécessaire est énorme et on peut donc largement faire l’hypothèse d’u fluide incompressible pour l’eau.</p>
 <p>On pourra retenir que les fluides incompressibles possèdent un coefficient de compressibilité isotherme très faible.</p>
-</aside>
+</div>
 <div class="attention admonition">
 <p class="admonition-title">Baromètre</p>
 <p>Le baromètre le plus courant est le baromètre de Torricelli. Il s’agit d’un tube en U fermé à une extrémité et l’autre extrémité est ouverte et à l’air libre. Du côté fermé, le mercure est surmonté par du vide en première approximation (P=0).</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Exprimer la différence de hauteur h entre les deux surfaces libres du mercure.</p></li>
 <li><p>On donne la masse volumique du mercure <span class="math notranslate nohighlight">\(\rho_{Hg} = 13,5 \times 10^3 \rm{kg.m^{-3}}\)</span>. Justifier l’utilisation du mercure plutôt que de l’eau pour faire un baromètre.</p></li>
 <li><p>Expliquer la définition de l’unité de pression mmHg (millimètre de mercure): <span class="math notranslate nohighlight">\(1\rm{mmHg}=133,3\rm{Pa}\)</span></p></li>
 </ol>
 </div>
-<aside class="topic">
+<div class="topic">
 <p class="topic-title">Correction</p>
 <p>On retiendra de cet exercice l’utilisation du fait que la pression est la même en tout point isoaltitude.</p>
 <p><strong>Résolution</strong></p>
@@ -405,24 +496,24 @@ document.write(`
 \end{align*}\]</div>
 <p>On observe que la taille du barométre sera beaucoup plus faible grâce sa plus forte masse volumique.</p>
 <p>On remarquera aussi que la différence de pression correspondant à une hauteur de mercure de 1mm est 133Pa, ce qui permet de définir l’unité de pression mmHg.</p>
-</aside>
-</section>
-<section id="gaz-parfait">
-<h2>Gaz parfait<a class="headerlink" href="#gaz-parfait" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="gaz-parfait">
+<h2>Gaz parfait<a class="headerlink" href="#gaz-parfait" title="Permalink to this headline">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Ordres de grandeurs </p>
 <p>On considère une atmosphère isotherme d’un gaz parfait.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Donner une expression d’une altitude caractéristique H qui gouverne l’échelle sur laquelle la pression varie notablement.</p></li>
 <li><p>Estimer H pour de l’air à la température <span class="math notranslate nohighlight">\(T = 273 \rm{K}\)</span>. Quelle hypothèse pourra être fait pour des gaz enfermée dans une enceinte de taille “normale”?</p></li>
 <li><p>Déterminer le champ de masse volumique. En déduire par intégration la masse totale de l’atmosphère (on supposera pour simplifier le calcul que la terre est plate !).</p></li>
 <li><p>On donne ci-dessous le profil de température et le profil de la masse d’atmosphère contenue sous l’altitude z. Commenter la validité du modèle isotherme.</p></li>
 </ol>
-<figure class="align-center" id="fig-266">
+<div class="figure align-center" id="fig-266">
 <img alt="../_images/thermo_statique_complement_fluide.jpg" src="../_images/thermo_statique_complement_fluide.jpg" />
-</figure>
 </div>
-<aside class="topic">
+</div>
+<div class="topic">
 <p class="topic-title">Démonstration</p>
 <ul class="simple">
 <li><p><strong>Altitude caractéristique</strong><br />
@@ -436,16 +527,16 @@ La relation des gaz parfaits donne une expression de la masse volumique. On int�
 On observe que le profil de mass volumique semble être cohérent mais les valeurs numériques ne le sont pas.</p></li>
 </ul>
 <p>Quant au profil de température, le caractère constant est largement criticable. On utilise souvent un profil de température linéaire.</p>
-</aside>
-</section>
-<section id="theoreme-d-archimede">
-<h2>Théorème d’Archimède<a class="headerlink" href="#theoreme-d-archimede" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="theoreme-d-archimede">
+<h2>Théorème d’Archimède<a class="headerlink" href="#theoreme-d-archimede" title="Permalink to this headline">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Iceberg</p>
 <p>On veut calculer le volume émergé de l’iceberg qu’on suppose de masse m répartie uniformément et de volume V. On suppose de plus que l’air et l’eau sont pour les dimensions considérées des fluides homogènes.</p>
 <p>On donne: <span class="math notranslate nohighlight">\(\rho_{glace} = 0,9 \rho_{eau}\)</span> et <span class="math notranslate nohighlight">\(\rho_{air} \ll \rho_{glace}\)</span>.</p>
 </div>
-<aside class="topic">
+<div class="topic">
 <p class="topic-title">Démonstration</p>
 <p>Notons <span class="math notranslate nohighlight">\(V_i\)</span> le volume immergé dans l’eau et <span class="math notranslate nohighlight">\(V_e\)</span> le voume émergé (donc immergé dans l’air). Les forces qui s’appliquent sur l’iceberg sont (on a pris un axe Oz vertical vers le haut):</p>
 <ul class="simple">
@@ -459,39 +550,39 @@ On observe que le profil de mass volumique semble être cohérent mais les valeu
 &amp; (\rho_{eau} V_i +\rho_{air}V_e - \rho_{glace} (V_i + V_e))g = 0\\
 &amp; \Longrightarrow\frac{V_i}{V_e} = \frac{\rho_{glace} - \rho_{air}}{\rho_{eau} - \rho_{glace}} \approx 9
 \end{align*}\]</div>
-</aside>
+</div>
 <div class="attention admonition">
 <p class="admonition-title">Ballon ascensionnel </p>
 <p>On s’intéresse à un ballon de volume V constant gonflé avec un gaz plus léger que l’air atmosphérique. Dans ce modèle, nous supposerons que le volume V est suffisamment petit pour qu’on puisse considérer que la masse volumique de l’air qui entoure le ballon est constante. On la note: <span class="math notranslate nohighlight">\(\rho_{air}\)</span> On note m la masse totale du ballon et (<span class="math notranslate nohighlight">\(\rho\)</span> sa masse volumique moyenne, c’est-à-dire que  <span class="math notranslate nohighlight">\(\rho = \frac{m}{V}\)</span>, il faut compter dans m la masse du gaz ET de l’enceinte).</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Etablir l’équation différentielle du mouvement du ballon en supposant le théorème d’Archimède applicable.</p></li>
 <li><p>On suppose qu’à une altitude <span class="math notranslate nohighlight">\(z_0\)</span>, le ballon est à l’équilibre. Faut-il augmenter ou diminuer la masse volumique du ballon pour monter? Justifier qu’on chauffe alors le gaz à l’intérieur pour s’élever.</p></li>
 <li><p>Pour descendre, on ouvre en général une soupape qui libère du gaz. Justifier la manoeuvre.</p></li>
 </ol>
 </div>
-<aside class="topic">
+<div class="topic">
 <p class="topic-title">Réponses</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>On est dans le cas où l’on assimile le champ de l’air à celui qu’il aurait au repos ce qui permet d’appliquer le théorème d’Archimède.</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
 m \ddot z = \left(\rho_{air} - \rho\right) g V
 \]</div>
-<ol class="arabic simple" start="2">
+<ol class="simple">
 <li><p>Il faut évidemment diminuer la masse volumique du ballon pour qu’il monte. En considérant le volume du ballon comme fixe (le ballon est tendu) et sa pression comme fixe (elle es imposée par la pression extérieure, la loi des gaz parfait montre qu’une diminution de la masse est associée à une augmentation de température.</p></li>
 <li><p>Cette fois-ci, la diminution de matière entraîne une diminution du volume (T et P constants) donc une augmentation de la masse volumique (à cause de la masse de la nacelle), ce qui permet de faire redescendre le ballon.
 \end{meth}</p></li>
 </ol>
-</aside>
-</section>
-<section id="calcul-de-force-de-pression">
-<h2>Calcul de force de pression<a class="headerlink" href="#calcul-de-force-de-pression" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="calcul-de-force-de-pression">
+<h2>Calcul de force de pression<a class="headerlink" href="#calcul-de-force-de-pression" title="Permalink to this headline">#</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Barrage</p>
 <p>On considère un barrage assimilable à un demi-cylindre de hauteur H et de rayon R. L’eau est retenue à “l’intérieur” du demi-cylindre. Calculer la résultante des forces de pression exercée sur le barrage. On prendra l’origine des <strong>profondeur</strong> z à la surface de l’eau où l’atmosphère supérieur y impose une pression <span class="math notranslate nohighlight">\(P_0\)</span>. Faire l’application numérique pour un barrage de 10m de haut de rayon 30m.</p>
 </div>
-<aside class="topic">
+<div class="topic">
 <p class="topic-title">Démonstration</p>
 <ul class="simple">
 <li><p><strong>Choix du système de coordonnées</strong></p></li>
@@ -531,9 +622,9 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
 \overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(P_0 H + \frac{\rho g H^2}{2}\right) \left(2\right) \\
 \overrightarrow{F} \cdot \overrightarrow{e_y} = R \left(2 P_0 H + \rho g H^2\right)
 \end{align*}\]</div>
-</aside>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -547,7 +638,7 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebook"
         },
         predefinedOutput: true
@@ -555,104 +646,50 @@ m \ddot z = \left(\rho_{air} - \rho\right) g V
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="statique_ex.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">S’entrainer</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="statique_ex.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">S’entrainer</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="statique_ex_app.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="statique_ex_app.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Exercices d’application</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluides-incompressibles">Fluides incompressibles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaz-parfait">Gaz parfait</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theoreme-d-archimede">Théorème d’Archimède</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-de-force-de-pression">Calcul de force de pression</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By C. Lacpatia
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2021.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. Lacpatia<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

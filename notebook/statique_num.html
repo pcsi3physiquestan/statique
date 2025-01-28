@@ -1,60 +1,47 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Approches numériques &#8212; Statique des fluides</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -64,97 +51,57 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebook/statique_num';</script>
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/statique/notebook/statique_num.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Travaux dirigés" href="statique_td.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    
 
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../statique.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Statique des fluides</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      
+      <h1 class="site-logo" id="site-title">Statique des fluides</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -164,196 +111,362 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="statique_contxt.html">Comprendre le contexte</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="statique_surface.html">Préambule: Surfaces orientées</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_pression.html">Forces de pression et pression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_equation.html">Equation fondamental de la statique des fluides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_incompressible.html">Cas des fluides incompressibles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_gp.html">Cas des gaz parfait: Atmopshère isotherme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_resultante.html">Expression de la résultante des forces de pression</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="statique_ex.html">S’entrainer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="statique_methode.html">Méthodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_ex_app.html">Exercices d’application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statique_td.html">Travaux dirigés</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Approches numériques</a></li>
-</ul>
-</li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="statique_contxt.html">
+   Comprendre le contexte
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_surface.html">
+     Préambule: Surfaces orientées
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_pression.html">
+     Forces de pression et pression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_equation.html">
+     Equation fondamental de la statique des fluides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_incompressible.html">
+     Cas des fluides incompressibles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_gp.html">
+     Cas des gaz parfait: Atmopshère isotherme
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_resultante.html">
+     Expression de la résultante des forces de pression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="statique_ex.html">
+   S’entrainer
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_methode.html">
+     Méthodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_ex_app.html">
+     Exercices d’application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="statique_td.html">
+     Travaux dirigés
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Approches numériques
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/notebook/statique_num.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
+          
 
 
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/statique_num.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebook/statique_num.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Approches numériques</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#etude-de-l-atmosphere-terrestre">Etude de l’atmosphère terrestre</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">Modélisation de l’atmosphère</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mise-en-equation">Mise en équation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-du-profil-de-pression-et-temperature">Détermination du profil de pression et température</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionnement-d-un-ballon-sonde-atmospherique">Dimensionnement d’un ballon-sonde atmosphérique</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-du-probleme">Position du problème</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/notebook/statique_num.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-de-l-atmosphere-terrestre">
+   Etude de l’atmosphère terrestre
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">
+     Modélisation de l’atmosphère
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     Mise en équation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-du-profil-de-pression-et-temperature">
+   Détermination du profil de pression et température
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionnement-d-un-ballon-sonde-atmospherique">
+   Dimensionnement d’un ballon-sonde atmosphérique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#position-du-probleme">
+     Position du problème
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Approches numériques</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-de-l-atmosphere-terrestre">
+   Etude de l’atmosphère terrestre
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">
+     Modélisation de l’atmosphère
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-equation">
+     Mise en équation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determination-du-profil-de-pression-et-temperature">
+   Détermination du profil de pression et température
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionnement-d-un-ballon-sonde-atmospherique">
+   Dimensionnement d’un ballon-sonde atmosphérique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#position-du-probleme">
+     Position du problème
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="approches-numeriques">
-<h1>Approches numériques<a class="headerlink" href="#approches-numeriques" title="Permalink to this heading">#</a></h1>
-<section id="etude-de-l-atmosphere-terrestre">
-<h2>Etude de l’atmosphère terrestre<a class="headerlink" href="#etude-de-l-atmosphere-terrestre" title="Permalink to this heading">#</a></h2>
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="approches-numeriques">
+<h1>Approches numériques<a class="headerlink" href="#approches-numeriques" title="Permalink to this headline">#</a></h1>
+<div class="section" id="etude-de-l-atmosphere-terrestre">
+<h2>Etude de l’atmosphère terrestre<a class="headerlink" href="#etude-de-l-atmosphere-terrestre" title="Permalink to this headline">#</a></h2>
 <p><strong>But :</strong> étudier les variations de température et de pression dans l’atmosphère.</p>
-<section id="modelisation-de-l-atmosphere">
-<h3>Modélisation de l’atmosphère<a class="headerlink" href="#modelisation-de-l-atmosphere" title="Permalink to this heading">#</a></h3>
+<div class="section" id="modelisation-de-l-atmosphere">
+<h3>Modélisation de l’atmosphère<a class="headerlink" href="#modelisation-de-l-atmosphere" title="Permalink to this headline">#</a></h3>
 <p>Dans le cadre du modèle ISA (International Standard Atmosphere), l’atmosphère est divisée en différentes couches, au sein desquelles la température est supposée suivre une <a class="reference external" href="https://fr.wikipedia.org/w/index.php?title=Atmosph%C3%A8re_normalis%C3%A9e&amp;oldid=181118275">loi affine</a>. La valeur du gradient vertical de température dans chacune de ces couches est normalisée.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -384,63 +497,63 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_1fbb7">
+<table id="T_d2bd9">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_1fbb7_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
-      <th id="T_1fbb7_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
-      <th id="T_1fbb7_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
+      <th id="T_d2bd9_level0_col0" class="col_heading level0 col0" >Couche atmosphérique</th>
+      <th id="T_d2bd9_level0_col1" class="col_heading level0 col1" >Altitude de la base (km)</th>
+      <th id="T_d2bd9_level0_col2" class="col_heading level0 col2" >Gradient thermique vertical (K/km)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_1fbb7_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_1fbb7_row0_col0" class="data row0 col0" >Troposphère</td>
-      <td id="T_1fbb7_row0_col1" class="data row0 col1" >0</td>
-      <td id="T_1fbb7_row0_col2" class="data row0 col2" >-6.5</td>
+      <th id="T_d2bd9_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_d2bd9_row0_col0" class="data row0 col0" >Troposphère</td>
+      <td id="T_d2bd9_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_d2bd9_row0_col2" class="data row0 col2" >-6.5</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_1fbb7_row1_col0" class="data row1 col0" >Tropopause</td>
-      <td id="T_1fbb7_row1_col1" class="data row1 col1" >11</td>
-      <td id="T_1fbb7_row1_col2" class="data row1 col2" >0</td>
+      <th id="T_d2bd9_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_d2bd9_row1_col0" class="data row1 col0" >Tropopause</td>
+      <td id="T_d2bd9_row1_col1" class="data row1 col1" >11</td>
+      <td id="T_d2bd9_row1_col2" class="data row1 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_1fbb7_row2_col0" class="data row2 col0" >Stratosphère</td>
-      <td id="T_1fbb7_row2_col1" class="data row2 col1" >20</td>
-      <td id="T_1fbb7_row2_col2" class="data row2 col2" >1.0</td>
+      <th id="T_d2bd9_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_d2bd9_row2_col0" class="data row2 col0" >Stratosphère</td>
+      <td id="T_d2bd9_row2_col1" class="data row2 col1" >20</td>
+      <td id="T_d2bd9_row2_col2" class="data row2 col2" >1.0</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_1fbb7_row3_col0" class="data row3 col0" >Stratosphère</td>
-      <td id="T_1fbb7_row3_col1" class="data row3 col1" >32</td>
-      <td id="T_1fbb7_row3_col2" class="data row3 col2" >2.8</td>
+      <th id="T_d2bd9_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_d2bd9_row3_col0" class="data row3 col0" >Stratosphère</td>
+      <td id="T_d2bd9_row3_col1" class="data row3 col1" >32</td>
+      <td id="T_d2bd9_row3_col2" class="data row3 col2" >2.8</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_1fbb7_row4_col0" class="data row4 col0" >Stratopause</td>
-      <td id="T_1fbb7_row4_col1" class="data row4 col1" >47</td>
-      <td id="T_1fbb7_row4_col2" class="data row4 col2" >0</td>
+      <th id="T_d2bd9_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_d2bd9_row4_col0" class="data row4 col0" >Stratopause</td>
+      <td id="T_d2bd9_row4_col1" class="data row4 col1" >47</td>
+      <td id="T_d2bd9_row4_col2" class="data row4 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_1fbb7_row5_col0" class="data row5 col0" >Mesosphère</td>
-      <td id="T_1fbb7_row5_col1" class="data row5 col1" >51</td>
-      <td id="T_1fbb7_row5_col2" class="data row5 col2" >-2.8</td>
+      <th id="T_d2bd9_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_d2bd9_row5_col0" class="data row5 col0" >Mesosphère</td>
+      <td id="T_d2bd9_row5_col1" class="data row5 col1" >51</td>
+      <td id="T_d2bd9_row5_col2" class="data row5 col2" >-2.8</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_1fbb7_row6_col0" class="data row6 col0" >Mesosphère</td>
-      <td id="T_1fbb7_row6_col1" class="data row6 col1" >71</td>
-      <td id="T_1fbb7_row6_col2" class="data row6 col2" >-2.0</td>
+      <th id="T_d2bd9_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_d2bd9_row6_col0" class="data row6 col0" >Mesosphère</td>
+      <td id="T_d2bd9_row6_col1" class="data row6 col1" >71</td>
+      <td id="T_d2bd9_row6_col2" class="data row6 col2" >-2.0</td>
     </tr>
     <tr>
-      <th id="T_1fbb7_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_1fbb7_row7_col0" class="data row7 col0" >Mesopause</td>
-      <td id="T_1fbb7_row7_col1" class="data row7 col1" >85</td>
-      <td id="T_1fbb7_row7_col2" class="data row7 col2" >NA</td>
+      <th id="T_d2bd9_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_d2bd9_row7_col0" class="data row7 col0" >Mesopause</td>
+      <td id="T_d2bd9_row7_col1" class="data row7 col1" >85</td>
+      <td id="T_d2bd9_row7_col2" class="data row7 col2" >NA</td>
     </tr>
   </tbody>
 </table>
@@ -456,17 +569,17 @@ P_{sol} &amp;= 1.013 \times 10^5 Pa
 \end{split}\]</div>
 <p>On utilisera les données obtenues pour étudier les  mouvements d’un ballon sonde.</p>
 <p><strong>Données numériques.</strong> On prend :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f60c4c05-b4a9-4db8-a8dc-84e21e2bf3b6">
-<span class="eqno">(3)<a class="headerlink" href="#equation-f60c4c05-b4a9-4db8-a8dc-84e21e2bf3b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a8d85012-4d22-4b7d-87f6-f96bf85dd7b0">
+<span class="eqno">(2)<a class="headerlink" href="#equation-a8d85012-4d22-4b7d-87f6-f96bf85dd7b0" title="Permalink to this equation">#</a></span>\[\begin{align}
 \textrm{Accélération de la pesanteur} &amp;:&amp; g = 9.81 m.s^{-2}\\
 \textrm{Masse molaire de l'air} &amp;:&amp; M_{air} = 29 g.mol^{-1}\\
 \textrm{Constante des gaz parfaits} &amp;:&amp; R = 8.314 J.K^{-1}.mol^{-1}
 \end{align}\]</div>
-</section>
-<section id="mise-en-equation">
-<h3>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="mise-en-equation">
+<h3>Mise en équation<a class="headerlink" href="#mise-en-equation" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="simple">
 <li><p>Montrer que si l’on suppose que l’air suit le modèle du gaz parfait. Alors les profils de pression et température doivent suivre le système d’équations suivantes :</p></li>
 </ol>
 </div></blockquote>
@@ -485,30 +598,30 @@ T(z = 0) &amp;= T_{sol} \\
 P(z = 0) &amp;= P_{sol}
 \end{cases}
 \end{split}\]</div>
-</section>
-</section>
-<section id="determination-du-profil-de-pression-et-temperature">
-<h2>Détermination du profil de pression et température<a class="headerlink" href="#determination-du-profil-de-pression-et-temperature" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="determination-du-profil-de-pression-et-temperature">
+<h2>Détermination du profil de pression et température<a class="headerlink" href="#determination-du-profil-de-pression-et-temperature" title="Permalink to this headline">#</a></h2>
 <p><strong>Attention aux unités m/km.</strong></p>
 <blockquote>
 <div><p><strong>Exercice 1 :</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">kISA</span></code> qui prend comme argument une altitude <code class="docutils literal notranslate"><span class="pre">z</span></code> et qui renvoie le gradient de température <span class="math notranslate nohighlight">\(k_{ISA}(z)\)</span> associé. Pensez à utiliser les listes définies au début. <em>On supposera que l’altitude reste toujours inférieure à 85km, on ne s’occupera donc pas du cas de la Mésopause.</em></p></li>
 <li><p>Utiliser <code class="docutils literal notranslate"><span class="pre">odeint</span></code> (ou <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>) pour déterminer le profil de température et de pression dans l’atmosphère.</p></li>
 <li><p>Tracer le profil de température et de pression dans l’atmosphère pour le modèle ISA.</p></li>
 </ol>
 </div></blockquote>
-</section>
-<section id="dimensionnement-d-un-ballon-sonde-atmospherique">
-<h2>Dimensionnement d’un ballon-sonde atmosphérique<a class="headerlink" href="#dimensionnement-d-un-ballon-sonde-atmospherique" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="dimensionnement-d-un-ballon-sonde-atmospherique">
+<h2>Dimensionnement d’un ballon-sonde atmosphérique<a class="headerlink" href="#dimensionnement-d-un-ballon-sonde-atmospherique" title="Permalink to this headline">#</a></h2>
 <p>Les ballons-sonde stratosphériques constituent une solution simple et relativement économique pour envoyer une charge dans l’atmosphère. Équipés de capteurs divers, ils peuvent par exemple permettre de relever les valeurs de la pression, de la température, de l’humidité ou encore devitesse du vent dans les différentes couches de l’atmosphère traversées</p>
-<section id="position-du-probleme">
-<h3>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this heading">#</a></h3>
+<div class="section" id="position-du-probleme">
+<h3>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">#</a></h3>
 <p>On considère ici un ballon-sonde stratosphérique “ouvert”, constitué d’une enveloppe de volume <span class="math notranslate nohighlight">\(V\)</span> ouverte sur l’extérieur par des manches d’évacuation situées à la base du ballon. Au moment du lancement, le ballon est gonflé à l’hélium (<span class="math notranslate nohighlight">\(M_{He} = 4,0 g.mol^{-1}\)</span>) ; l’enveloppe garde un volume constant tout au long de l’ascension. Le ballon étant ouvert à sa base, la pression à l’intérieur du ballon est identique à tout moment à la pression atmosphérique. La masse de l’ensemble { enveloppe (hors hélium) + nacelle + instruments embarqués } est <span class="math notranslate nohighlight">\(m = 10 kg\)</span>.</p>
 <blockquote>
 <div><p><strong>Exercice 2 :</strong>
 On souhaite que le ballon atteigne une altitude <span class="math notranslate nohighlight">\(z_{max}\)</span> choisie.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Estimer le volume <span class="math notranslate nohighlight">\(V\)</span> de l’enveloppe qui permet d’atteindre cette altitude puis le diamètre du ballon associé.
 Vous devrez :</p></li>
 </ol>
@@ -518,9 +631,9 @@ Vous devrez :</p></li>
 <li><p>Estimer V et d pour <span class="math notranslate nohighlight">\(z_{max} = 36 km\)</span> en procédant par dichotomie pour trouver l’indice donnant l’altitude la plus proche de <span class="math notranslate nohighlight">\(z_{max}\)</span>. Commenter la possibilité pour des amateurs de réaliser un tel ballon.</p></li>
 </ul>
 </div></blockquote>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -534,7 +647,7 @@ Vous devrez :</p></li>
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebook"
         },
         predefinedOutput: true
@@ -542,101 +655,43 @@ Vous devrez :</p></li>
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="statique_td.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Travaux dirigés</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="statique_td.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Travaux dirigés</p>
+        </div>
     </a>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#etude-de-l-atmosphere-terrestre">Etude de l’atmosphère terrestre</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelisation-de-l-atmosphere">Modélisation de l’atmosphère</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mise-en-equation">Mise en équation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determination-du-profil-de-pression-et-temperature">Détermination du profil de pression et température</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionnement-d-un-ballon-sonde-atmospherique">Dimensionnement d’un ballon-sonde atmosphérique</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-du-probleme">Position du problème</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By C. Lacpatia
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2021.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. Lacpatia<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
